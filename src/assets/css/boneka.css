@@ -1,0 +1,78 @@
+/* === BONAKA PAGE STYLING === */
+.boneka-section {
+  padding: 60px 0;
+  background-color: #f8f9fa; /* warna bg light */
+}
+
+.boneka-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.boneka-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.boneka-section h2 svg {
+  margin-right: 10px;
+}
+
+.boneka-section p {
+  font-size: 1.05rem;
+  color: #6c757d;
+}
+
+.boneka-section ul {
+  padding-left: 1.2rem;
+  margin: 20px 0;
+  color: #495057;
+}
+
+.boneka-section ul li {
+  margin-bottom: 10px;
+  list-style: none;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.boneka-section ul li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  color: green;
+}
+
+.boneka-section .btn {
+  margin-top: 15px;
+  font-size: 1rem;
+  padding: 10px 24px;
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+}
+
+.boneka-section .btn:hover {
+  transform: translateY(-2px);
+}
+
+/* === Responsive Mobile === */
+@media (max-width: 767px) {
+  .boneka-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .boneka-section p {
+    font-size: 1rem;
+  }
+
+  .boneka-section .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

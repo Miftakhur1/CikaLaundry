@@ -1,0 +1,107 @@
+/* ======= HERO SECTION ======= */
+.layanan-hero {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: auto;
+  text-align: center;
+  
+}
+
+.layanan-hero h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 992px) {
+  .layanan-hero {
+    height: 220px;
+  }
+
+  .layanan-hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .layanan-hero {
+    height: 180px;
+  }
+
+  .layanan-hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ======= KONTEN LAYANAN ======= */
+.layanan-page {
+  background-color: #f8f9fa;
+  padding-bottom: 2rem;
+   border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.layanan-card {
+  transition: transform 0.3s ease;
+  
+  overflow: hidden;
+  height: 100%;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.layanan-card:hover {
+  transform: translateY(-5px) scale(0.98);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.layanan-card img {
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .layanan-card img {
+    height: 150px;
+  }
+   .layanan-card .btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 90px; /* tombol juga ikut membulat */
+  }
+}
+
+@media (max-width: 576px) {
+  .layanan-card img {
+    height: 130px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .layanan-card .btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 90px; /* tombol juga ikut membulat */
+  }
+}
+
+.badge-best-seller {
+  background-color: #ff6f00;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}

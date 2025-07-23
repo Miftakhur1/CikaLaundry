@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaWhatsapp, FaBagShopping } from "react-icons/fa6";
 import tas from "../assets/img/tas.jpeg";
-import "../dist/css/tas.css";
+import "../assets/css/tas.css";
 
 const TasPage = () => {
   return (

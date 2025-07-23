@@ -1,0 +1,84 @@
+.contact-hero-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.482)), url("/public/ct.png");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Typography inside hero (optional improvement) */
+.contact-hero-banner .elegant-title {
+  font-size: 3.5rem;
+  color: #f7f8f9;
+  font-weight: 700;
+  margin: 0;
+}
+
+.contact-section {
+  background-color: #f9fbfc;
+  padding: 60px 0;
+}
+
+.outlet-card-horizontal {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.outlet-img-wrapper {
+  width: 40%;
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.outlet-img-wrapper img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.outlet-card-content {
+  width: 60%;
+  padding: 1.5rem;
+}
+
+/* Button */
+.btn {
+  color: rgb(228, 244, 5);
+  font-weight: 600;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .contact-hero-banner {
+    height: 240px;
+    padding: 0 1rem;
+  }
+
+  .contact-hero-banner .elegant-title {
+    font-size: 2rem;
+  }
+
+  .outlet-card-horizontal {
+    flex-direction: column;
+  }
+
+  .outlet-img-wrapper {
+    width: 100%;
+    height: 200px;
+  }
+
+  .outlet-card-content {
+    width: 100%;
+    padding: 1rem 1.25rem;
+  }
+}

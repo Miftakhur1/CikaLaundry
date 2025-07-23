@@ -1,6 +1,6 @@
 import { useState ,useRef} from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import "../dist/css/contact.css";
+import "../assets/css/contact.css";
 
 const outlets = [
   {

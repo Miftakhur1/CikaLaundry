@@ -1,0 +1,77 @@
+.promo-detail-page {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.promo-detail-page h2 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  color: #101010;
+  text-align: center;
+}
+
+.promo-detail-page h4 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #343a40;
+  margin-bottom: 1rem;
+}
+
+.promo-detail-page p {
+  font-size: 1rem;
+  color: #495057;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.promo-detail-page img {
+  max-height: 200px;
+  object-fit: cover ;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.promo-detail-page .btn {
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.promo-detail-page .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .promo-detail-page h2 {
+    font-size: 1.8rem;
+  }
+
+  .promo-detail-page h4 {
+    font-size: 1.25rem;
+  }
+
+  .promo-detail-page p {
+    font-size: 0.95rem;
+  }
+
+  .promo-detail-page img {
+    max-height: 100px;
+  }
+}
+.badge.bg-danger {
+  background-color: #dc3545 !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+

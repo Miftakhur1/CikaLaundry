@@ -1,0 +1,39 @@
+/* Footer */
+.footer-link {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #00d9ff;
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  footer .text-center img {
+    width: 150px !important;
+  }
+
+  footer h5 {
+    font-size: 1.1rem;
+  }
+
+  footer p,
+  footer li {
+    font-size: 0.95rem;
+  }
+
+  footer .d-flex.gap-3 {
+    justify-content: center;
+  }
+}
+@media (max-width: 576px) {
+  footer .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  footer .bg-dark {
+    padding: 1rem !important;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "../dist/css/layanan.css";
+import "../assets/css/layanan.css";
 import { FaStar } from "react-icons/fa";
 
 // Gambar

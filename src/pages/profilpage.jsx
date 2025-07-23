@@ -2,7 +2,7 @@ import { useEffect,useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "../dist/css/profil.css";
+import '../assets/css/profil.css';
 import {
   FaHandsWash,
   FaTag,
