@@ -81,7 +81,7 @@ const PromoPage = () => {
   <Row
     key={idx}
     className="align-items-center text-center mb-5 p-4 rounded-2 shadow-sm"
-    style={{ borderRadius:'30px',backgroundColor: "#e6f2ff" }}
+    style={{ borderRadius:'100px',backgroundColor: "#e6f2ff" }}
     data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
   >
     <Col md={6} className={idx % 2 !== 0 ? "order-md-2" : ""}>

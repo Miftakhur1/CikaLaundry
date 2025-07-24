@@ -34,13 +34,16 @@ const layananList = [
 
 const KategoriSection = ({ title, items }) => (
   <section className="my-5">
-    <h3 className="fw-bold text-center mb-4">{title}</h3>
-    <Row>
-      {items.map((item, idx) => (
-        <Col key={idx} xs={12} sm={6} md={4} lg={3} className="mb-4">
-          <Card className="h-100 shadow-sm layanan-card position-relative">
+  <h3 className="fw-bold text-center mb-4">{title}</h3>
+  
+  <div className="layanan-grid">
+    {items.map((item, idx) => (
+      <div key={idx} className="layanan-card-wrapper">
+        <Card className="h-100 shadow-sm layanan-card position-relative">
           {item.bestSeller && (
-            <span className="badge-best-seller position-absolute top-0 start-0 m-2"><FaStar className="me-1" />Best Seller</span>
+            <span className="badge-best-seller position-absolute top-0 start-0 m-2">
+              <FaStar className="me-1" />Best Seller
+            </span>
           )}
           <Card.Img
             variant="top"
@@ -59,11 +62,11 @@ const KategoriSection = ({ title, items }) => (
             )}
           </Card.Body>
         </Card>
+      </div>
+    ))}
+  </div>
+</section>
 
-        </Col>
-      ))}
-    </Row>
-  </section>
 );
 
 const LayananPage = () => {

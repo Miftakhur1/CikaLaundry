@@ -16,7 +16,7 @@
 }
 html,body {
  width: 100%;
-  outline: 2px solid red;
+
 
   overflow-x: hidden;
   justify-content: center;
@@ -81,7 +81,7 @@ html,body {
 
 /* === HERO SECTION (Jika masih di homepage) === */
 .hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/ct.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/public/ct.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -231,13 +231,14 @@ body {
 }
 
 .profil-section {
-  padding: 90px 0;
+  padding: 50px 1px;
   background-color: #ffffff;
   overflow-x: hidden;
 }
 
 .profil-section img {
   max-height: 420px;
+  min-width: 400px;
   object-fit: cover;
   width: 100%;
   border-radius: 5px;
@@ -287,12 +288,12 @@ body {
   }
 
   .profil-section {
-    padding: 60px 20px;
+    padding: 50px 15px;
     text-align: center;
   }
 
   .profil-section img {
-    max-height: 300px;
+    max-height: 420px;
     margin-bottom: 20px;
   }
 
@@ -562,168 +563,94 @@ body {
 
 
         /* Section Promo Utama */
-/* ===================== PROMO SECTION ===================== */
-.promo-section {
-  background: linear-gradient(135deg, #0593f8, #42a3f3);
-  color: #222;
-  padding: 80px 0;
+/* ===================== PROMO CONTAINER ===================== */
+.promo-container-horizontal {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1.5rem;
+  scroll-snap-type: x mandatory;
+  background: linear-gradient(to left, #d8ecff, #f1f9ff);
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.05);
 }
 
-/* Judul Elegan */
-.elegant-title {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 1px;
-  font-size: 2.7rem;
-  color: #000000e6;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-/* Promo Card */
-.promo-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 0.75rem;
+/* ===================== KARTU PROMO ===================== */
+.promo-item-horizontal {
+  flex: 0 0 auto;
+  min-width: 340px;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 20px;
   overflow: hidden;
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  height: 100%;
+  scroll-snap-align: start;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.promo-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.promo-item-horizontal:hover {
+  transform: translateY(-5px) scale(0.98);
+  box-shadow: 0 12px 24px rgba(0, 123, 255, 0.15);
 }
 
-/* Gambar dalam Promo */
-.promo-card img {
-  height: 200px;
-  object-fit: cover;
+/* ===================== GAMBAR ===================== */
+.promo-item-horizontal img {
   width: 100%;
+  height: 190px;
+  object-fit: cover;
 }
 
-/* Konten Promo */
-.promo-card .card-body {
-  padding: 1.25rem;
-  flex-grow: 1;
+/* ===================== KONTEN ===================== */
+.promo-content {
+  padding: 1.2rem;
+  text-align: center;
 }
 
-.promo-card h5 {
-  font-size: 1.25rem;
+.promo-content h5 {
+  font-size: 1.2rem;
   font-weight: 600;
+  color: #012a4a;
+  margin-bottom: 0.5rem;
 }
 
-.promo-card p {
+.promo-content p {
   font-size: 0.95rem;
+  color: #4d4d4d;
   margin-bottom: 1rem;
 }
 
-/* Button Promo */
-.promo-card .btn {
+/* ===================== TOMBOL ===================== */
+.promo-item-horizontal .btn {
+  background: linear-gradient(135deg, #0594ff, #00d9ff);
+  color: #fff;
   border: none;
-  background-color: #fff;
-  color: #000;
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
   font-weight: 600;
-  transition: background-color 0.2s ease;
-  border: 1px solid #ccc;
-  border-radius: 50px;
-  padding: 0.5rem 1.25rem;
-  display: inline-block;
-  width: fit-content;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0, 123, 255, 0.3);
 }
 
-.promo-card .btn:hover {
-  background-color: #f0f0f0;
-  color: #333;
-}
-
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 992px) {
-  .elegant-title {
-    font-size: 2.2rem;
-  }
-
-  .promo-card img {
-    height: 180px;
-  }
-}
-
-@media (max-width: 768px) {
-  .promo-section {
-    padding: 2rem 1rem;
-  }
-
-  .promo-card {
-    margin-top: 1.5rem;
-  }
-
-  .elegant-title {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .promo-card img {
-    height: 160px;
-  }
-}
-
-@media (max-width: 480px) {
-  .promo-card img {
-    height: 140px;
-  }
-
-  .promo-card h5 {
-    font-size: 1.1rem;
-  }
-
-  .promo-card p {
-    font-size: 0.9rem;
-  }
-
-  .promo-card .btn {
-    padding: 0.4rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-/* Optional - Tambahan animasi atau style badge */
-.promo-card .badge-new {
-  animation: pulseNew 1.5s infinite;
-}
-
-@keyframes pulseNew {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.8; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-/* ===================== LAYANAN IMAGE ===================== */
-.img-layanan {
-  height: 300px;
-  width: 100%;
-  object-fit: contain;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #f8f9fa; /* opsional: agar gambar putih tetap terlihat */
-  transition: transform 0.3s ease;
-}
-
-.img-layanan:hover {
-  transform: scale(1.03);
+.promo-item-horizontal .btn:hover {
+  background: linear-gradient(135deg, #007bff, #00b3ff);
+  transform: scale(0.98);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+  color: #000;
 }
 
 /* ===================== CONTACT SECTION ===================== */
 .contact-section {
-  background: linear-gradient(to bottom, #0584fb82, #f1f9ff);
+  background: linear-gradient(to bottom, #ffffff, #e6f2ff);
   padding: 70px 0;
-  
+  border-top: 1px solid #cce4f7;
 }
 
 .contact-section h3 {
   font-size: 2rem;
   font-weight: 600;
-  color: #000811;
+  color: #003366;
   margin-bottom: 1rem;
 }
 
@@ -743,56 +670,21 @@ body {
   background-color: #059a40;
   color: #ffffff;
   font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-.contact-section .btnn{
-  background-color: #9e760e;
-}
-.contact-section .btn.btnn:hover{
-  background-color: #8f6a0c;
+  transition: all 0.3s ease;
 }
 
 .contact-section .btn:hover {
   background-color: #2e8810;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 768px) {
-  .img-layanan {
-    height: 220px;
-  }
-
-  .contact-section h3 {
-    font-size: 1.7rem;
-  }
-
-  .contact-section p {
-    font-size: 0.95rem;
-  }
-
-  .contact-section .btn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
-  }
+.contact-section .btnn {
+  background-color: #d89a00;
 }
 
-@media (max-width: 576px) {
-  .img-layanan {
-    height: 180px;
-  }
-
-  .contact-section h3 {
-    font-size: 1.5rem;
-  }
-
-  .contact-section p {
-    font-size: 0.9rem;
-  }
-
-  .contact-section .btn {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-  }
+.contact-section .btn.btnn:hover {
+  background-color: #b57f00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
 /* ===================== FOOTER ===================== */
@@ -831,7 +723,7 @@ footer h4 {
   font-size: 0.95rem;
   text-decoration: none;
   transition: color 0.2s ease;
-  display: inline-block;
+  
   margin: 0.4rem 0;
 }
 
@@ -845,6 +737,7 @@ footer h4 {
   font-size: 1.3rem;
   margin-right: 10px;
   transition: color 0.2s ease;
+  
 }
 
 .social-icon:hover {
@@ -877,6 +770,7 @@ footer .text-muted {
 @media (max-width: 992px) {
   footer h4 {
     font-size: 1.5rem;
+    
   }
 
   .footer-link {
@@ -895,7 +789,7 @@ footer .text-muted {
 
   footer .d-flex {
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: left !important;
     gap: 1rem;
   }
 
@@ -917,31 +811,30 @@ footer .text-muted {
 }
 
 /* ===================== FAQ SECTION ===================== */
+.faq-section {
+  background: linear-gradient( #e6f2ff);
+  padding: 60px ;
+}
 
-
-/* FAQ Title */
 .faq-section h5 {
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: #000811;
+  color: #003366;
 }
 
-/* Accordion Styling */
 .accordion-button {
   background-color: #ffffff;
   color: #007acc;
   font-weight: 600;
-  border-radius: 0.5rem !important;
-  margin-bottom: 10px;
+  border-radius: 8px !important;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: #00bcd4;
-  color: #fff;
-  box-shadow: none;
+  color: #0d6efd;
+  background-color: #e9f4ff;
 }
 
 .accordion-button:focus {
@@ -953,23 +846,96 @@ footer .text-muted {
   background-color: #f9fcff;
   color: #222;
   padding: 1rem 1.25rem;
-  border-radius: 0.5rem;
+  border-radius: 10px;
   font-size: 1rem;
   margin-bottom: 10px;
 }
+/* ===================== ICON SECTION ===================== */
+.icon {
+  background: linear-gradient( #e6f2ff);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding:20px;
+}
 
-/* Responsive Typography */
+/* ===================== SOCIAL MEDIA ICONS ===================== */
+.footer-social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 45px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  background-color: #f1f1f1c8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.footer-social-icons a i {
+  font-size: 1.8rem;
+}
+
+.instagram-icon {
+  color: #e1306c;
+}
+.instagram-icon:hover {
+  background-color: #e1306c;
+  color: #fff;
+}
+
+.tiktok-icon {
+  color: #000;
+}
+.tiktok-icon:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
-  .faq-section h5 {
-    font-size: 1.6rem;
+  .img-layanan {
+    height: 220px;
   }
 
-  .accordion-body {
+  .contact-section h3 {
+    font-size: 1.7rem;
+  }
+
+  .contact-section p {
     font-size: 0.95rem;
   }
 
+  .contact-section .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .faq-section h5 {
+    font-size: 1.5rem;
+  }
+
+  .accordion-body,
   .accordion-button {
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .img-layanan {
+    height: 180px;
+  }
+
+  .contact-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact-section p {
+    font-size: 0.9rem;
+  }
+
+  .contact-section .btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
   }
 }
 

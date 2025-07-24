@@ -1,140 +1,118 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
-import { FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp, FaInstagram, FaTiktok, FaGoogle, FaVoicemail } from "react-icons/fa";
+import { NavLink, Link } from "react-router-dom";
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaWhatsapp,
+  FaInstagram,
+  FaTiktok,
+  FaGoogle,
+} from "react-icons/fa";
 import LogoImage from "../assets/img/LOGO.png";
-
-
+import "../assets/css/footer.css";
 const FooterComponent = () => {
-  const scrollToTopSmooth = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToTopSmooth = () =>
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
-    <footer className="text-light pt-5" style={{ backgroundColor: "#121212", position: "relative", overflow: "hidden" }}>
-      <Container>
-        <Row className="gy-5">
-          {/* Brand / Logo */}
-          <Col xs={12} md={3}>
-            <div className="bg-dark p-4 rounded shadow-sm text-center ">
-              <h4 className="fw-bold text-info">Cika Laundry</h4>
-              <img
-                src={LogoImage}
-                alt="Logo Cika Laundry"
-                className="mb-3 img-fluid"
-                style={{ maxWidth: "220px", height: "auto" }}
-              />
-              <p className="mt-3 mb-2">
-                Profesional Laundry: Wet, Dry & Kiloan. Solusi bersih, wangi & cepat!
-              </p>
-              <hr className="border-secondary" />
-              <p style={{ fontStyle: "italic", fontSize: "0.9rem" }}>
-                “Kepuasan Anda, Prioritas Kami”
-              </p>
-            </div>
-          </Col>
+    <footer>
+  <Container>
+    <Row className="text-start ">
+      <Col md={3} className="footer-column mt-4">
+        <div className="footer-logo ">
+          <img src={LogoImage} alt="Cika Laundry" />
+        </div>
+        <p >
+          Profesional Laundry: Wet, Dry & Kiloan. Solusi bersih, wangi & cepat!
+        </p>
+        <div >
+        <em className=" text-secondary ">“Kepuasan Anda, Prioritas Kami!”</em>
+</div>     
+      </Col>
 
-          {/* Navigasi dan Layanan */}
-          <Col xs={12} md={4}>
-            <div className="d-flex flex-column flex-md-row justify-content-between">
-              {/* Navigasi */}
-              <div className="mb-4 mb-md-0">
-                <h5 className="fw-semibold mb-3">Navigasi</h5>
-                <ul className="list-unstyled">
-  <li>
-    <NavLink to="/" className="footer-link d-block mb-2" onClick={scrollToTopSmooth}>
-      › Beranda
-    </NavLink>
-  </li>
-  <li>
-    <NavLink to="/profil" className="footer-link d-block mb-2" onClick={scrollToTopSmooth}>
-      › Tentang Kami
-    </NavLink>
-  </li>
-  <li>
-    <NavLink to="/layanan" className="footer-link d-block mb-2" onClick={scrollToTopSmooth}>
-      › Layanan
-    </NavLink>
-  </li>
-  <li>
-    <NavLink to="/promo" className="footer-link d-block mb-2" onClick={scrollToTopSmooth}>
-      › Promo
-    </NavLink>
-  </li>
-  <li>
-    <NavLink to="/contact" className="footer-link d-block" onClick={scrollToTopSmooth}>
-      › Kontak Kami
-    </NavLink>
-  </li>
-</ul>
-              </div>
+      <Col md={2} className="footer-column d-flex flex-column mt-4 text-sm-start">
+        <h5>Navigasi</h5>
+        <a href="/" className="footer-link"onClick={scrollToTopSmooth}>› Beranda</a>
+        <a href="/profil" className="footer-link"onClick={scrollToTopSmooth}>› Tentang Kami</a>
+        <a href="/layanan" className="footer-link"onClick={scrollToTopSmooth}>› Layanan</a>
+        <a href="/promo" className="footer-link"onClick={scrollToTopSmooth}>› Promo</a>
+        <a href="/kontak" className="footer-link"onClick={scrollToTopSmooth}>› Kontak Kami</a>
+      </Col>
 
-              {/* Layanan */}
-              <div>
-                <h5 className="fw-semibold mb-3">Layanan Kami</h5>
-                <ul className="list-unstyled">
-                  <li><NavLink to="/reguler" className="footer-link d-block mb-2">› Paket Reguler</NavLink></li>
-                  <li><NavLink to="/express" className="footer-link d-block mb-2">› Paket Express</NavLink></li>
-                  <li><NavLink to="/dryclean" className="footer-link d-block mb-2">› Paket DryClean</NavLink></li>
-                  <li><NavLink to="/helm" className="footer-link d-block mb-2">› Helm</NavLink></li>
-                  <li><NavLink to="/tas" className="footer-link d-block mb-2">› Tas</NavLink></li>
-                  <li><NavLink to="/sepatu" className="footer-link d-block mb-2">› Sepatu</NavLink></li>
-                  <li><NavLink to="/karpet" className="footer-link d-block mb-2">› Karpet</NavLink></li>
-                  <li><NavLink to="/bedcover" className="footer-link d-block">› BedCover</NavLink></li>
-                </ul>
-              </div>
-            </div>
-          </Col>
+      <Col md={3} className="footer-column d-flex mt-4 flex-column">
+  <h5>Layanan Kami</h5>
+  {[
+    { name: "Paket Reguler", slug: "/reguler" },
+    { name: "Paket Express", slug: "/express" },
+    { name: "Paket DryClean", slug: "/dryclean" },
+    { name: "Helm", slug: "/helm" },
+    { name: "Tas", slug: "/tas" },
+    { name: "Sepatu", slug: "/sepatu" },
+    { name: "Karpet", slug: "/karpet" },
+    { name: "BedCover", slug: "/bedcover" },
+  ].map((item, i) => (
+    <Link
+  to={item.slug}
+  key={i}
+  onClick={scrollToTopSmooth}
+  className="footer-link text-decoration-none mb-1"
+>
+  › {item.name}
+</Link>
 
-          {/* Kontak */}
-          <Col xs={12} md={5}>
-            <div className=" px-5 text-center ">
-              <h5 className="fw-semibold mb-3">Hubungi Kami</h5>
-              <ul className="list-unstyled text-start text-center d-inline-block">
-              <li className="mb-2">
-                <FaMapMarkerAlt className="me-2 " />
-                Jl. Hasanudin No.G11, Semarang Utara
-              </li>
-              <li className="mb-2">
-                <FaMapMarkerAlt className="me-2 text-gray" />
-                Jl. Anjasmoro Raya No.5, Semarang Barat
-              </li>
-              <li className="mb-2">
-                <FaMapMarkerAlt className="me-2 text-gray" />
-                Jl. Kedungmundu No.28B, Tembalang
-              </li>
-              <li className="mb-2">
-                <FaMapMarkerAlt className="me-2 text-gray" />
-                Jl. Soekarno Hatta No.61, Palebon
-              </li>
-              <li>
-                <FaMapMarkerAlt className="me-2 text-gray" />
-                Jl. Prof. Dr. Hamka, Ngaliyan
-              </li>
-            </ul>
-              <div className="py-2 justify-content-center gap-4 mt-3">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=cikalaudrysemarang@gmail.com"
+  ))}
+</Col>
+
+      <Col md={4} className="footer-column mt-4 ">
+        <h5>Hubungi Kami</h5>
+        <p><i className="bi bi-geo-alt-fill me-2"></i>Jl. Hasanudin No.G11, Semarang Utara</p>
+        <p><i className="bi bi-geo-alt-fill me-2"></i>Jl. Anjasmoro Raya No.5, Semarang Barat</p>
+        <p><i className="bi bi-geo-alt-fill me-2"></i>Jl. Kedungmundu No.28B, Tembalang</p>
+        <p><i className="bi bi-geo-alt-fill me-2"></i>Jl. Soekarno Hatta No.61, Palebon</p>
+        <p><i className="bi bi-geo-alt-fill me-2"></i>Jl. Prof. Dr. Hamka, Ngaliyan</p>
+
+       {/* Sosial Media */}
+              <div className="py-3 footer-link d-flex gap-4 mt-3 fs-4">
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=cikalaudrysemarang@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-icon text-light fs-4"><FaGoogle /></a>
-                <a href="https://www.instagram.com/cikalaundryhq/"
+                  className="text-white"
+                >
+                  <FaGoogle />
+                </a>
+                <a
+                  href="https://www.instagram.com/cikalaundryhq/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-icon text-light fs-4"><FaInstagram /></a>
-                
-                <a href="https://www.tiktok.com/@cikalaundry"
+                  className="text-light"
+                >
+                  <FaInstagram />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@cikalaundry"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-icon text-light fs-4"><FaTiktok /></a>
+                  className="text-light"
+                >
+                  <FaTiktok />
+                </a>
               </div>
-            </div>
+            
           </Col>
-        </Row>
+        
+    </Row>
 
+     {/* Copyright */}
         <hr className="my-4 border-secondary" />
         <div className="text-center pb-3 text-muted small">
-          &copy; {new Date().getFullYear()} Cika Laundry • Clean Living, Better Life. All Rights Reserved. <br />
-          Designed & Developed by Mft
+          &copy; {new Date().getFullYear()} Cika Laundry • Clean Living, Better Life.
+          <br />
+          All Rights Reserved. Designed & Developed by Mft
         </div>
-      </Container>
+     
 
-      {/* Background Bubble */}
+      {/* Bubble Background */}
       <div
         style={{
           position: "absolute",
@@ -146,7 +124,9 @@ const FooterComponent = () => {
           zIndex: 0,
         }}
       ></div>
-    </footer>
+  </Container>
+</footer>
+
   );
 };
 
