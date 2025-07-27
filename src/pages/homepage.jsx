@@ -8,7 +8,7 @@ import {
 
 } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,Link} from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -134,21 +134,21 @@ const handleClose = () => setShowModal(false);
         data-aos="zoom-in"
         data-aos-delay="400"
       >
-        <a
-          href="/layanan"
-          className="btn px-3 py-2 rounded-pill text-white d-flex justify-content-center align-items-center gap-2 text-center"
-          style={{ backgroundColor: "#2196f3" }}
-        >
-          <FaHandsWash /> Lihat Layanan
-        </a>
+        <Link
+  to="/layanan"
+  className="btn px-3 py-2 rounded-pill text-white d-flex justify-content-center align-items-center gap-2 text-center"
+  style={{ backgroundColor: "#2196f3" }}
+>
+  <FaHandsWash /> Lihat Layanan
+</Link>
 
-        <a
-          href="/promo"
-          className="btn px-4 py-2 rounded-pill text-dark d-flex justify-content-center align-items-center gap-2 text-center"
-          style={{ backgroundColor: "#ffca28" }}
-        >
-          <FaTag /> Lihat Promo
-        </a>
+<Link
+  to="/promo"
+  className="btn px-4 py-2 rounded-pill text-dark d-flex justify-content-center align-items-center gap-2 text-center"
+  style={{ backgroundColor: "#ffca28" }}
+>
+  <FaTag /> Lihat Promo
+</Link>
       </div>
     </div>
   </Container>

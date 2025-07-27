@@ -81,7 +81,7 @@ html,body {
 
 /* === HERO SECTION (Jika masih di homepage) === */
 .hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/public/ct.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/ct.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
