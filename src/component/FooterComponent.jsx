@@ -29,11 +29,11 @@ const FooterComponent = () => {
 
       <Col md={2} className="footer-column d-flex flex-column mt-4 text-sm-start">
         <h5>Navigasi</h5>
-        <a href="/" className="footer-link"onClick={scrollToTopSmooth}>› Beranda</a>
-        <a href="/profil" className="footer-link"onClick={scrollToTopSmooth}>› Tentang Kami</a>
-        <a href="/layanan" className="footer-link"onClick={scrollToTopSmooth}>› Layanan</a>
-        <a href="/promo" className="footer-link"onClick={scrollToTopSmooth}>› Promo</a>
-        <a href="/contact" className="footer-link"onClick={scrollToTopSmooth}>› Kontak Kami</a>
+        <NavLink to="/" className="footer-link" onClick={scrollToTopSmooth}>› Beranda</NavLink>
+        <NavLink to="/profil" className="footer-link" onClick={scrollToTopSmooth}>› Tentang Kami</NavLink>
+        <NavLink to="/layanan" className="footer-link" onClick={scrollToTopSmooth}>› Layanan</NavLink>
+        <NavLink to="/promo" className="footer-link" onClick={scrollToTopSmooth}>› Promo</NavLink>
+        <NavLink to="/contact" className="footer-link" onClick={scrollToTopSmooth}>› Kontak Kami</NavLink>
       </Col>
 
       <Col md={3} className="footer-column d-flex mt-4 flex-column">

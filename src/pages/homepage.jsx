@@ -460,7 +460,7 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
           <br />
          <button
   className="btn-detail mt-3"
-  onClick={() => window.location.href = "/promo"}
+  onClick={() => navigate("/promo")}
 >
   Lihat Detail
 </button>
