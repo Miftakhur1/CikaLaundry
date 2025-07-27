@@ -2,7 +2,7 @@ import React from "react";
 import { Container,Modal, Row, Col, Button } from "react-bootstrap";
 import { FaClock, FaStar, FaThumbsUp, FaWhatsapp } from "react-icons/fa";
 
-import premiumImg from "../assets/img/pf2.jpg"; // Ganti dengan gambar premium Anda
+import premiumImg from "../assets/img/pr.png"; // Ganti dengan gambar premium Anda
 import { useEffect,useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -34,7 +34,10 @@ const LaundryPremium = () => {
     />
   </Col>
   <Col md={8} data-aos="fade-left" className="text-center text-md-start">
-    <h2 className="fw-bold text-primary mb-3">Paket Premium</h2>
+   <h2 className="fw-bold text-primary mb-3">
+  <FaStar className="me-2" />
+  Paket Premium
+</h2>
     <h5 className="fw-semibold mb-3">Laundry Premium Wangi & Detail</h5>
     <p className="text-secondary mb-3">
       Rasakan sensasi kebersihan maksimal dan wangi mewah dari paket premium kami.
@@ -46,7 +49,7 @@ const LaundryPremium = () => {
       <li><FaStar className="text-warning me-2" />Deterjen & Parfum Premium</li>
       <li><FaThumbsUp className="text-success me-2" />Pengerjaan Sangat Detail</li>
       <li>📦 Minimal 3kg per pemesanan</li>
-      <li>🧺 Harga mulai <strong>Rp12.000/kg</strong></li>
+      {/* <li>🧺 Harga mulai <strong>Rp12.000/kg</strong></li> */}
     </ul>
 
     <Button

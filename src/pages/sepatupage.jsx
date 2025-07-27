@@ -41,7 +41,7 @@ const SepatuPage = () => {
               <li><FaCheckCircle className="text-success me-2" />Deep Clean & Treatment</li>
               <li><FaCheckCircle className="text-success me-2" />Aman untuk bahan canvas, kulit, suede, mesh, dll</li>
               <li><FaCheckCircle className="text-success me-2" />Pengeringan alami, tidak merusak lem</li>
-              <li><FaCheckCircle className="text-success me-2" />Harga mulai Rp50.000-Rp80.000 per pasang (tergantung sepatu)</li>
+              {/* <li><FaCheckCircle className="text-success me-2" />Harga mulai Rp50.000-Rp80.000 per pasang (tergantung sepatu)</li> */}
             </ul>
             <Button
                variant="outline-light"

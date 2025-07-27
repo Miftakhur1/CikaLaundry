@@ -1,5 +1,5 @@
 import { Container, Modal, Row, Col, Button } from "react-bootstrap";
-import { FaWhatsapp, FaClock, FaTruck } from "react-icons/fa";
+import { FaWhatsapp, FaClock, FaTruck,FaBed } from "react-icons/fa";
 import { useEffect,useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -34,7 +34,10 @@ const BedcoverPage = () => {
             />
           </Col>
           <Col md={8} data-aos="fade-left" className="text-center text-md-start">
-            <h2 className="fw-bold text-primary mb-3">Cuci Bedcover</h2>
+            <h2 className="fw-bold text-primary mb-3">
+  <FaBed className="me-2" />
+  Cuci Bedcover
+</h2>
             <p className="text-secondary fs-5 mb-4">
               Layanan profesional untuk mencuci <strong>bedcover, selimut, dan sprei tebal</strong>.
               Menggunakan mesin khusus dan deterjen antibakteri agar hasil bersih, harum, dan higienis.
@@ -42,7 +45,7 @@ const BedcoverPage = () => {
             <ul className="list-unstyled text-dark mb-4">
               <li><FaClock className="text-warning me-2" />Durasi: ± 3 Hari</li>
               <li><FaTruck className="text-success me-2" />Gratis Antar-Jemput</li>
-              <li>🛏️ Harga mulai Rp30.000–55.000 (Tegantung Bedcover)</li>
+              {/* <li>🛏️ Harga mulai Rp30.000–55.000 (Tegantung Bedcover)</li> */}
               
             </ul>
             <Button

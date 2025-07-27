@@ -35,7 +35,10 @@ const ExpressPage = () => {
             />
           </Col>
           <Col md={8} data-aos="fade-left" className="text-center text-md-start">
-            <h2 className="fw-bold text-primary mb-3">Paket Express</h2>
+            <h2 className="fw-bold text-primary mb-3">
+  <FaBolt className="me-2" />
+  Paket Express
+</h2>
             <p className="text-secondary fs-5 mb-4">
               Layanan cuci kilat dengan proses <strong>selesai di hari yang sama</strong>. Cocok untuk Anda yang butuh pakaian bersih dalam waktu cepat tanpa mengorbankan kualitas.
             </p>
@@ -43,7 +46,7 @@ const ExpressPage = () => {
               <li><FaBolt className="text-danger me-2" />Durasi: 2–6 Jam (Hari yang Sama)</li>
               <li><FaClock className="text-warning me-2" />Antrian Khusus - Prioritas</li>
               <li>📦 Minimal 3kg per pemesanan</li>
-              <li>🧺 Harga mulai Rp20.000/kg </li>
+              {/* <li>🧺 Harga mulai Rp20.000/kg </li> */}
             </ul>
             <Button
               variant="outline-light"

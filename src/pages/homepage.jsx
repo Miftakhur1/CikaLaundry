@@ -22,7 +22,7 @@ import Hero3 from "../assets/img/dress.png";
 import LogoImage from "../assets/img/LOGO.png";
 import PaketRegulerImg from "../assets/img/regu.png";
 import PaketExpress from "../assets/img/paket-express.jpg";
-import PaketDrylean from "../assets/img/paket-dryclean.jpg";
+import pr from "../assets/img/pr.png";
 import dress from "../assets/img/dress.png";
 import Karpet from "../assets/img/kr.jpg";
 import karpet from "../assets/img/cuci-karpet.jpg";
@@ -41,10 +41,10 @@ const Homepage = () => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 const testimonials = [
-  { name: "Dewi Lestari", time: "1 minggu lalu", text: "Pelayanan ramah, hasil cucian rapi dan wangi. Antar jemput cepat banget!", rating: 5 },
-  { name: "Rian Pratama", time: "3 minggu lalu", text: "Cocok buat laundry harian, bersih dan tepat waktu.", rating: 4 },
-  { name: "Nina Rahma", time: "2 minggu lalu", text: "Langganan terus. Puas banget!", rating: 5 },
-  { name: "Andre Yudha", time: "4 hari lalu", text: "Order via WA, langsung diambil. Hasilnya mantap.", rating: 4 },
+  { name: "Bunda Ima2", time: "1 minggu lalu", text: "cuciannya bersih,setrikanya rapi & wangi,pelayanannya ramah", rating: 5 ,photo:""},
+  { name: "Sri Rohayati", time: "3 minggu lalu", text: "Saya suci di graha wahid pelayanan bagus kasirnya ramah cucian bersih rapi dan wangi pokok nya mantap👍 …", rating: 4 },
+  { name: "yuni nasywa", time: "4 hari lalu", text: "Cpt layanannya", rating: 5 },
+  { name: "Hadinda Aulia", time: "5 hari lalu", text: "Favorit laundryku dari 2 tahun yg lalu ,pelayanan dari kasirnya sangat ramah dan antar jemputnya cepat ,mas nya ramah bgt ganteng🤭 sukses terus cika …", rating: 4 },
   { name: "Ayu Meilani", time: "5 hari lalu", text: "Wangi banget dan cepat! Recommended.", rating: 5 },
 ];
 const navigate = useNavigate();
@@ -60,6 +60,19 @@ const outlets = [
   const [showModal, setShowModal] = useState(false);
   const [activeMap, setActiveMap] = useState("");
    const mapRef = useRef(null);
+// Fungsi untuk menghasilkan warna berdasarkan index
+const getAvatarColor = (index) => {
+  const colors = [
+    "#6f42c1", // purple
+    "#20c997", // teal
+    "#fd7e14", // orange
+    "#0d6efd", // blue
+    "#dc3545", // red
+    "#198754", // green
+    "#ffc107", // yellow
+  ];
+  return colors[index % colors.length];
+};
 
    const promoData = [
   {
@@ -104,7 +117,12 @@ useEffect(() => {
     }
   }
 }, []);
-  
+   const handleClick = () => {
+    navigate("/promo");
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100); // jeda agar navigasi selesai dulu
+  };
 const handleShow = () => setShowModal(true);
 const handleClose = () => setShowModal(false);
   return (
@@ -247,7 +265,7 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
       dengan proses pencucian yang higienis dan teliti agar tetap nyaman dipakai seharian.
     </p>
     <Swiper spaceBetween={15} slidesPerView={'auto'} grabCursor={true} freeMode={true}>
-      {[ { src: PaketRegulerImg, title: 'Paket Premium', slug: '/premium' },
+      {[ { src: pr, title: 'Paket Premium', slug: '/premium' },
        { src: PaketRegulerImg, title: 'Paket Reguler', slug: '/reguler' },
   { src: PaketExpress, title: 'Paket Express', slug: '/express' },
   { src: cu, title: 'Cuci Kering', slug: '/cuker' },
@@ -390,12 +408,27 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
                   style={{ minWidth: "250px", maxWidth: "300px" }}
                 >
                   <div className="d-flex align-items-center mb-2">
-                    <img
-                      src={`https://i.pravatar.cc/150?img=${i + 10}`}
-                      alt={rev.name}
-                      className="rounded-circle me-2"
-                      style={{ width: 40, height: 40, objectFit: "cover" }}
-                    />
+                  {rev.photo ? (
+                      <img
+                        src={rev.photo}
+                        alt={rev.name}
+                        className="rounded-circle me-2"
+                        style={{ width: 40, height: 40, objectFit: "cover" }}
+                      />
+                    ) : (
+                      <div
+                        className="rounded-circle text-white d-flex align-items-center justify-content-center me-2"
+                        style={{
+                          width: 40,
+                          height: 40,
+                          fontWeight: "bold",
+                          backgroundColor: getAvatarColor(i), // i = index dari map()
+                        }}
+                      >
+                        {rev.name.charAt(0)}
+                      </div>
+                    )}
+
                     <div>
                       <h6 className="mb-0">{rev.name}</h6>
                       <small className="text-muted">{rev.time}</small>
@@ -460,7 +493,8 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
           <br />
          <button
   className="btn-detail mt-3"
-  onClick={() => navigate("/promo")}
+   onClick={handleClick}
+
 >
   Lihat Detail
 </button>

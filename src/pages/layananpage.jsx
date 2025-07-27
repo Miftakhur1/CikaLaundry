@@ -8,7 +8,7 @@ import { FaStar } from "react-icons/fa";
 import pfImage from "/ct.png"; // Ganti sesuai nama hero image
 import PaketRegulerImg from "../assets/img/regu.png";
 import PaketExpress from "../assets/img/paket-express.jpg";
-import PaketDrylean from "../assets/img/paket-dryclean.jpg";
+import pr from "../assets/img/pr.png";
 import dress from "../assets/img/dress.png";
 import Karpet from "../assets/img/kr.jpg";
 import helm from "../assets/img/helm.png";
@@ -19,11 +19,12 @@ import sofa from "../assets/img/sf.png";
 import jas from "../assets/img/jas.png";
 import spr from "../assets/img/spr.png";
 import str from "../assets/img/str.png";
+import cu from "../assets/img/cu.png";
 const layananList = [
-  { src: PaketRegulerImg, title: "Paket Premium", slug: "/premium", kategori: "Kiloan",bestSeller: true },
+  { src: pr, title: "Paket Premium", slug: "/premium", kategori: "Kiloan",bestSeller: true },
   { src: PaketRegulerImg, title: "Paket Reguler", slug: "/reguler", kategori: "Kiloan",bestSeller: true },
   { src: PaketExpress, title: "Paket Express", slug: "/express", kategori: "Kiloan",bestSeller: true },
-  { src: PaketDrylean, title: "Cuci Kering", slug: "/cuker", kategori: "Kiloan",bestSeller: true },
+  { src: cu, title: "Cuci Kering", slug: "/cuker", kategori: "Kiloan",bestSeller: true },
   { src: str, title: "Setrika", slug: "/setrika", kategori: "Kiloan",bestSeller: true },
   { src: bc, title: "Bed Cover",slug: "/bc", kategori: "Satuan" ,bestSeller: true},
   { src: jas, title: "Jas", slug:'/jas', kategori: "Satuan" ,bestSeller: true},

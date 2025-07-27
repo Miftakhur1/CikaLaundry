@@ -47,7 +47,7 @@ const HelmPage = () => {
               <li><FaCheckCircle className="text-success me-2" />Cuci full bagian dalam & luar helm</li>
               <li><FaCheckCircle className="text-success me-2" />Cairan antibakteri + anti jamur</li>
               <li><FaCheckCircle className="text-success me-2" />Dijemur alami agar tidak merusak busa</li>
-              <li><FaCheckCircle className="text-success me-2" />Harga terjangkau mulai Rp50.000</li>
+              {/* <li><FaCheckCircle className="text-success me-2" />Harga terjangkau mulai Rp50.000</li> */}
             </ul>
             <Button
               variant="outline-light"

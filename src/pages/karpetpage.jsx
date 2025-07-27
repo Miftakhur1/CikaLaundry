@@ -3,7 +3,7 @@ import { FaWhatsapp, FaClock, FaCouch } from "react-icons/fa";
 import { useEffect,useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import { GiRolledCloth } from "react-icons/gi"; // untuk karpet
 import KarpetImg from "../assets/img/cuci-karpet.jpg"; // Ganti path jika perlu
 
 const KarpetPage = () => {
@@ -34,7 +34,10 @@ const KarpetPage = () => {
             />
           </Col>
           <Col md={8} data-aos="fade-left" className="text-center text-md-start">
-            <h2 className="fw-bold text-primary mb-3">Layanan Cuci Karpet</h2>
+           <h2 className="fw-bold text-primary mb-3">
+  <GiRolledCloth className="me-2" />
+  Layanan Cuci Karpet
+</h2>
             <p className="text-secondary fs-5 mb-4">
               Solusi ideal untuk menjaga kebersihan dan kenyamanan rumah Anda. Karpet dicuci dengan teknik khusus agar kembali bersih, harum, dan bebas tungau.
             </p>
@@ -42,7 +45,7 @@ const KarpetPage = () => {
               <li><FaCouch className="text-info me-2" />Durasi: ± 3–5 Hari</li>
               <li><FaClock className="text-warning me-2" />Penanganan Khusus & Jemur Matahari</li>
               <li>📦 Bisa pickup langsung ke rumah</li>
-              <li>🧺 Harga mulai Rp15.000/m² (tergantung jenis karpet)</li>
+              {/* <li>🧺 Harga mulai Rp15.000/m² (tergantung jenis karpet)</li> */}
             </ul>
             <Button
              variant="outline-light"

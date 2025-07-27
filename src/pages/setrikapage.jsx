@@ -1,5 +1,16 @@
 import { Container, Modal,Row, Col, Button } from "react-bootstrap";
-import { FaWhatsapp, FaClock, FaStar } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaClock,
+  FaStar,
+  FaBolt,
+  FaTshirt,
+  FaBed,
+  FaCheckCircle,
+  
+  FaUserTie,
+} from "react-icons/fa";
+import { MdIron } from "react-icons/md";
 import { useEffect,useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -34,7 +45,10 @@ const SetrikaPage = () => {
             />
           </Col>
           <Col md={8} data-aos="fade-left" className="text-center text-md-start">
-            <h2 className="fw-bold text-primary mb-3">Layanan Setrika</h2>
+            <h2 className="fw-bold text-primary mb-3">
+  <MdIron className="me-2" />
+  Layanan Setrika
+</h2>
             <p className="text-secondary fs-5 mb-4">
               Pakaian Anda akan <strong>disetrika rapi dan wangi</strong> oleh staf profesional. Cocok untuk seragam kerja, pakaian formal, dan kebutuhan harian yang ingin selalu tampil rapi.
             </p>
@@ -43,7 +57,7 @@ const SetrikaPage = () => {
               <li><FaStar className="text-info me-2" />Hasil: Licin, wangi, dan siap pakai</li>
               <li>📦 Tanpa proses cuci (hanya setrika)</li>
               <li>📦 Minimal 3kg per pemesanan</li>
-              <li>🧺 Harga mulai  Rp8.000 per kg</li>
+              {/* <li>🧺 Harga mulai  Rp8.000 per kg</li> */}
             </ul>
             <Button
               className="rounded-pill px-4 py-2 d-inline-flex align-items-center justify-content-center gap-2"

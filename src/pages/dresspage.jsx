@@ -50,7 +50,7 @@ const DressPage = () => {
               <li><FaCheckCircle className="text-success me-2" />Setrika uap & listrik sesuai bahan</li>
               <li><FaCheckCircle className="text-success me-2" />Digantung alami tanpa pelipatan</li>
               <li><FaCheckCircle className="text-success me-2" />dapatkan diskon 10%</li>
-              <li><FaCheckCircle className="text-success me-2" />Harga mulai Rp25.000-Rp60.000 per pasang (tergantung sepatu)</li>
+              {/* <li><FaCheckCircle className="text-success me-2" />Harga mulai Rp25.000-Rp60.000 per pasang (tergantung sepatu)</li> */}
 
             </ul>
             <Button

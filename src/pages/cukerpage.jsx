@@ -1,10 +1,10 @@
 import { Container, Modal,Row, Col, Button } from "react-bootstrap";
-import { FaWhatsapp, FaClock, FaCheckCircle } from "react-icons/fa";
+import { FaWhatsapp, FaClock, FaCheckCircle,FaTshirt } from "react-icons/fa";
 import { useEffect,useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import CuciKeringImg from "../assets/img/pf1.jpg"; // Pastikan file ada di folder img
+import CuciKeringImg from "../assets/img/cu.png"; // Pastikan file ada di folder img
 
 const CuciKeringPage = () => {
   useEffect(() => {
@@ -34,7 +34,10 @@ const CuciKeringPage = () => {
             />
           </Col>
           <Col md={8} data-aos="fade-left" className="text-center text-md-start">
-            <h2 className="fw-bold text-primary mb-3">Layanan Cuci Kering</h2>
+            <h2 className="fw-bold text-primary mb-3">
+  <FaTshirt className="me-2" />
+  Layanan Cuci Kering
+</h2>
             <p className="text-secondary fs-5 mb-4">
               Solusi hemat untuk Anda yang ingin pakaian bersih tanpa harus disetrika. Cocok untuk pakaian rumahan, kaos, atau cucian harian Anda.
             </p>
@@ -42,7 +45,7 @@ const CuciKeringPage = () => {
               <li><FaClock className="text-warning me-2" />Durasi: 1–2 Hari Kerja</li>
               <li><FaCheckCircle className="text-success me-2" />Tanpa Setrika, Lebih Ekonomis</li>
               <li>📦 Minimal 3kg per pemesanan</li>
-              <li>🧺 Harga mulai Rp8.500/kg </li>
+              {/* <li>🧺 Harga mulai Rp8.500/kg </li> */}
             </ul>
             <Button
               variant="outline-light"

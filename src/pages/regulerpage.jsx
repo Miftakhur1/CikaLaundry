@@ -1,5 +1,5 @@
 import { Container, Modal,Row, Col, Button } from "react-bootstrap";
-import { FaWhatsapp, FaClock, FaTruck } from "react-icons/fa";
+import { FaWhatsapp, FaClock, FaTruck,FaCheckCircle } from "react-icons/fa";
 import { useEffect ,useState} from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -34,7 +34,10 @@ const RegulerPage = () => {
             />
           </Col>
           <Col md={8} data-aos="fade-left" className="text-center text-md-start">
-            <h2 className="fw-bold text-primary mb-3">Paket Reguler</h2>
+           <h2 className="fw-bold text-primary mb-3">
+  <FaCheckCircle className="me-2" />
+  Paket Reguler
+</h2>
             <h5 className="fw-semibold mb-3">Paket Reguler (1 Hari)</h5>
             <p className="text-secondary mb-3">
               Layanan cuci kilat dengan proses selesai dalam <strong>1 hari kerja</strong>.
@@ -44,7 +47,7 @@ const RegulerPage = () => {
               <li><FaClock className="text-warning me-2" />Durasi: ± 1 Hari (24 jam)</li>
               <li><FaTruck className="text-success me-2" />Gratis Antar-Jemput</li>
               <li>📦 Minimal 3kg per pemesanan</li>
-              <li>🧺 Harga mulai <strong>Rp10.000/kg</strong></li>
+              {/* <li>🧺 Harga mulai <strong>Rp10.000/kg</strong></li> */}
             </ul>
 
             <h5 className="fw-semibold mb-3">Paket Reguler (2 Hari)</h5>

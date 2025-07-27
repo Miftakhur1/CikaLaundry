@@ -41,7 +41,7 @@ const JasPage = () => {
               <li><FaCheckCircle className="text-success me-2" />Disetrika uap & digantung</li>
               <li><FaCheckCircle className="text-success me-2" />Siap dalam ±3 Hari Kerja</li>
               <li><FaCheckCircle className="text-success me-2" />Dapatkan diskon 10%</li>
-              <li><FaCheckCircle className="text-success me-2" />Harga Rp50.000 per jas</li>
+              {/* <li><FaCheckCircle className="text-success me-2" />Harga Rp50.000 per jas</li> */}
             </ul>
             <Button
              variant="outline-light"
