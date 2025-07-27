@@ -9,7 +9,7 @@ const outlets = [
     whatsapp: "628156505562",
     mapsEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.043862433234!2d110.41005637598784!3d-6.969491768147202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70f4b1965893cb%3A0x80691b3a260f010!2sCika%20Laundry%20Hasanudin!5e0!3m2!1sid!2sid!4v1721200000000",
-    image: "/public/hs.jpg",
+    image: "/hs.jpg",
   },
   {
     name: "Puri Anjasmoro",
@@ -17,7 +17,7 @@ const outlets = [
     whatsapp: "628156505562",
     mapsEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.400000000000!2d110.3889538!3d-6.9812906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b321b92b399%3A0xce97f11af2fe9624!2sCika+Laundry!5e0!3m2!1sid!2sid!4v1721300000000",
-    image: "/public/pr.jpg",
+    image: "/pr.jpg",
   },
   {
     name: "Arteri",
@@ -25,7 +25,7 @@ const outlets = [
     whatsapp: "6285729315058",
     mapsEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.001100000000!2d110.4677705!3d-7.0057305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708cfcfb3cc257%3A0x8fe9a1c70a24f7ed!2sCika+Laundry+Arteri!5e0!3m2!1sid!2sid!4v1721300000001",
-    image: "/public/ar.jpg",
+    image: "/ar.jpg",
   },
   {
     name: "Graha Wahid",
@@ -33,7 +33,7 @@ const outlets = [
     whatsapp: "628156602666",
     mapsEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.100000000000!2d110.4588605!3d-7.0247046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708dfcd89e13b3%3A0x1f5d0d963ad082e7!2sCika+Laundry+Graha+Wahid!5e0!3m2!1sid!2sid!4v1721300000002",
-    image: "/public/gr.jpg",
+    image: "/gr.jpg",
   },
   {
     name: "Ngaliyan",
@@ -41,7 +41,7 @@ const outlets = [
     whatsapp: "62816784455",
     mapsEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.010000000000!2d110.3409471!3d-6.998563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708abd5249617d%3A0xef3c564fb14d6fc9!2sCika+Laundry+%26+Drycleaning+Ngaliyan!5e0!3m2!1sid!2sid!4v1721300000003",
-    image: "/public/ng.jpg",
+    image: "/ng.jpg",
   },
 ];
 
