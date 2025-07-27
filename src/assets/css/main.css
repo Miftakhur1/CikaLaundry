@@ -635,6 +635,7 @@ html,body {
   background: linear-gradient(to bottom, #f7f5f5e6, #e6f2ff);
   padding: 70px 0;
   border-top: 1px solid #cce4f7;
+  text-align: center;
 }
 
 .contact-section h3 {
@@ -650,6 +651,7 @@ html,body {
   max-width: 600px;
   margin: 0 auto 2rem;
   line-height: 1.7;
+  padding: 0 1rem;
 }
 
 .contact-section .btn {
@@ -661,6 +663,7 @@ html,body {
   color: #ffffff;
   font-weight: 500;
   transition: all 0.3s ease;
+  margin: 0.5rem;
 }
 
 .contact-section .btn:hover {
@@ -676,6 +679,47 @@ html,body {
   background-color: #b57f00;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .contact-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact-section p {
+    font-size: 0.95rem;
+    padding: 0 1.5rem;
+  }
+
+  .contact-section .btn {
+    width: 100%;
+    max-width: 300px;
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 50px 0;
+  }
+
+  .contact-section h3 {
+    font-size: 1.25rem;
+  }
+
+  .contact-section p {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+
+  .contact-section .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    max-width: 90%;
+  }
+}
+
 
 
 /* ===================== FAQ SECTION ===================== */

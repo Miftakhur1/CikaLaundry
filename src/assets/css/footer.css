@@ -15,7 +15,9 @@ footer h5 {
 }
 
 .footer-logo img {
-  width: 300px;
+  width: 100%;
+  max-width: 300px; /* batas maksimum tetap 300px */
+  height: auto;     /* mempertahankan rasio gambar */
   margin-bottom: 1rem;
 }
 

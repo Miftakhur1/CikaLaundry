@@ -571,7 +571,7 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
             title="Cika Laundry Map"
             src={activeMap}
             width="100%"
-            height="780"
+            height="880"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
@@ -580,7 +580,7 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
         ) : (
           <div
             className="d-flex align-items-center justify-content-center"
-            style={{ height: "780px", backgroundColor: "#f8f9fa" }}
+            style={{ height: "880px", backgroundColor: "#f8f9fa" }}
           >
             <span className="text-muted">Klik Tombol Maps</span>
           </div>
