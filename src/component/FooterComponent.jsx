@@ -1,9 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaWhatsapp,
   FaInstagram,
   FaTiktok,
   FaGoogle,
@@ -36,7 +33,7 @@ const FooterComponent = () => {
         <a href="/profil" className="footer-link"onClick={scrollToTopSmooth}>› Tentang Kami</a>
         <a href="/layanan" className="footer-link"onClick={scrollToTopSmooth}>› Layanan</a>
         <a href="/promo" className="footer-link"onClick={scrollToTopSmooth}>› Promo</a>
-        <a href="/kontak" className="footer-link"onClick={scrollToTopSmooth}>› Kontak Kami</a>
+        <a href="/contact" className="footer-link"onClick={scrollToTopSmooth}>› Kontak Kami</a>
       </Col>
 
       <Col md={3} className="footer-column d-flex mt-4 flex-column">
@@ -44,12 +41,15 @@ const FooterComponent = () => {
   {[
     { name: "Paket Reguler", slug: "/reguler" },
     { name: "Paket Express", slug: "/express" },
-    { name: "Paket DryClean", slug: "/dryclean" },
+    { name: "Cuci Kering", slug: "/cuker" },
+    { name: "Setrika", slug: "/setrika" },
+    { name: "Jas", slug: "/jas" },
+    { name: "Dress", slug: "/Dress" },
     { name: "Helm", slug: "/helm" },
     { name: "Tas", slug: "/tas" },
     { name: "Sepatu", slug: "/sepatu" },
     { name: "Karpet", slug: "/karpet" },
-    { name: "BedCover", slug: "/bedcover" },
+    { name: "BedCover", slug: "/bc" },
   ].map((item, i) => (
     <Link
   to={item.slug}
@@ -105,25 +105,31 @@ const FooterComponent = () => {
 
      {/* Copyright */}
         <hr className="my-4 border-secondary" />
-        <div className="text-center pb-3 text-muted small">
+        <div className="text-center pb-3 text-muted ">
           &copy; {new Date().getFullYear()} Cika Laundry • Clean Living, Better Life.
           <br />
-          All Rights Reserved. Designed & Developed by Mft
+          All Rights Reserved. Designed & Developed by Mfth
         </div>
      
 
       {/* Bubble Background */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "-40px",
-          left: "-50px",
-          width: "200px",
-          height: "200px",
-          background: "radial-gradient(circle at center, #00d9ff33, transparent 70%)",
-          zIndex: 0,
-        }}
-      ></div>
+       <div
+    className="bubble-footer"
+    style={{
+      position: "absolute",
+      bottom: "-40px", // tidak perlu -1500px
+      left: "-20px",
+      width: "200px",
+      height: "200px",
+      background: "radial-gradient(circle at center, #00d9ff33, transparent 70%)",
+      zIndex: 1,
+      pointerEvents: "none", // agar tidak mengganggu klik
+    }}
+    
+  ></div>
+  
+
+  
   </Container>
 </footer>
 

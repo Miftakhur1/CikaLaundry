@@ -1,138 +1,146 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import  { useState } from "react";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
+import { FaShareAlt, FaWhatsapp } from "react-icons/fa";
+import "../assets/css/promo.css";
 
-import Karpet from "../assets/img/cuci-karpet.jpg";
 import PaketDrylean from "../assets/img/paket-dryclean.jpg";
+import Karpet from "../assets/img/cuci-karpet.jpg";
 
-const promos = [
+const pfImage = "/gh.jpg";
+
+const promoList = [
   {
     title: "Laundry Kiloan - Bonus 1Kg setiap 6Kg",
     desc:
-      "Dapatkan 1Kg gratis setiap transaksi laundry kiloan minimal 6Kg. Hemat lebih banyak sambil menjaga kebersihan dari tanah, daki, dan debu yang menempel di pakaian Anda. Cocok untuk kebutuhan harian keluarga.",
+      "Nikmati promo spesial dari Cika Laundry! Dapatkan bonus 1Kg gratis untuk setiap 6Kg laundry yang Anda lakukan. Cocok untuk keluarga atau laundry besar, kami pastikan pakaian Anda bersih, wangi, dan siap pakai dalam waktu singkat.",
     img: PaketDrylean,
     shareText:
-      "Bonus 1Kg setiap Laundry 6Kg! Cika Laundry bikin hemat dan pakaian bersih total dari debu dan daki!",
-   isNew: true,
-    },
+      "Laundry Kiloan Spesial – Dapatkan 1Kg gratis untuk setiap 6Kg! Bersih, wangi, dan cepat. Promo terbatas!",
+    isNew: true,
+  },
   {
     title: "Diskon 20% untuk Layanan Cuci Karpet",
     desc:
-  "Karpet Anda terlihat kusam atau mulai berbau tidak sedap? Saatnya percayakan pada layanan cuci karpet profesional dari Cika Laundry! Kami menggunakan alat khusus berteknologi modern untuk mengangkat debu, kotoran, dan tungau hingga ke serat terdalam. Proses pencucian dilakukan langsung oleh tenaga ahli berpengalaman yang paham karakter bahan dan metode perawatannya. Hasilnya? Karpet Anda kembali bersih maksimal, harum, dan higienis. Dapatkan diskon 20% untuk layanan ini, hanya hingga akhir bulan!",
+      "Karpet Anda terlihat kusam atau mulai berbau tidak sedap? Saatnya percayakan pada layanan cuci karpet profesional dari Cika Laundry! Kami menggunakan alat khusus berteknologi modern untuk mengangkat debu, kotoran, dan tungau hingga ke serat terdalam. Dapatkan diskon 20% hingga akhir bulan!",
     img: Karpet,
     shareText:
       "Cuci Karpet Bersih Maksimal – Diskon 20% dari Cika Laundry! Dikerjakan dengan alat khusus & tenaga ahli. Promo terbatas!",
-  isNew: true,
-    },
+    isNew: true,
+  },
   {
     title: "Diskon 10% Layanan Dry Clean Premium",
     desc:
-  "Pakaian spesial seperti jas, gaun pesta, batik premium, hingga kebaya memerlukan perawatan khusus. Cika Laundry menghadirkan layanan dry clean eksklusif dengan chemical pilihan yang aman untuk bahan halus, menjaga warna, dan mempertahankan tekstur asli pakaian. Setiap item dicuci secara manual oleh staf terlatih, bukan dengan mesin biasa, sehingga noda membandel dapat dibersihkan secara menyeluruh. Tampil lebih percaya diri dengan pakaian bersih, wangi, dan terawat. Dapatkan diskon 10% hanya bulan ini!",
+      "Pakaian spesial seperti jas, gaun pesta, batik premium, hingga kebaya memerlukan perawatan khusus. Cika Laundry menghadirkan layanan dry clean eksklusif dengan chemical pilihan yang aman. Dapatkan diskon 10% hanya bulan ini!",
     img: PaketDrylean,
     shareText:
       "Dry Clean Profesional Diskon 10%! Cika Laundry pakai chemical pilihan & proses manual oleh tenaga ahli. Hasil bersih tanpa noda!",
-   isNew: true,
-    },
-  
+  },
 ];
 
-const PromoPage = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
+const outlets = [
+  { name: "Cika Laundry Hasanudin", phone: "628156505562" },
+  { name: "Cika Laundry Puri Anjasmoro", phone: "628156505562" },
+  { name: "Cika Laundry Arteri", phone: "6285729315058" },
+  { name: "Cika Laundry Graha Wahid", phone: "628156602666" },
+  { name: "Cika Laundry Ngaliyan", phone: "628156603444" },
+  { name: "WhatsApp Karpet, Sofa, Springbed", phone: "62816784455" },
+];
 
-  const pfImage = "/gh.jpg"; // Gambar latar hero promo
+const handleShare = (text) => {
+  const link = "https://cikalaundry.id/promo";
+  const fullText = `Promo Cika Laundry: ${text}\nLihat detail: ${link}`;
 
-  const handleShare = (text) => {
-    const link = "https://cikalaundry.id/promo";
-    const fullText = `Promo Cika Laundry: ${text}\nLihat detail: ${link}`;
-
-    if (navigator.share) {
-      navigator.share({
+  if (navigator.share) {
+    navigator
+      .share({
         title: "Promo Cika Laundry",
         text: fullText,
         url: link,
-      });
-    } else {
-      const waLink = `https://wa.me/?text=${encodeURIComponent(fullText)}`;
-      window.open(waLink, "_blank");
-    }
-  };
+      })
+      .catch((err) => console.log("Share failed:", err));
+  } else {
+    alert("Fitur berbagi tidak didukung di perangkat ini.");
+  }
+};
+
+const PromoPage = () => {
+  const [showModal, setShowModal] = useState(false);
 
   return (
-    <>
-      {/* Hero Section */}
+    <section className="promo-section">
+      {/* Hero */}
       <div
-        className="profil-hero"
+        className="promo-hero d-flex align-items-center justify-content-center text-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${pfImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "300px",
         }}
       >
-        <h1 className="text-white mb-4 mt-5">Promo</h1>
+        <h1 className= "text-white fw-bold mb-4 mt-5">Promo</h1>
       </div>
 
-      {/* Promo Section */}
-      <div className="promo-detail-page">
-        <Container className="py-5">
+      {/* Judul dan Deskripsi */}
+      <Container className="mt-5">
+        
+        <h4 className="text-center text-muted mb-5" >
+          🎉🎉Dapatkan penawaran spesial mulai dari diskon, bonus kiloan, hingga cuci karpet hemat!
+          Yuk manfaatkan promonya sebelum berakhir! 💨
+        </h4>
 
+        {/* Promo Cards */}
+        <Row>
+          {promoList.map((promo, idx) => (
+            <Col md={12} key={idx} className="mb-4">
+              <div className="promo-card">
+                <div className="promo-image-wrapper">
+                  {promo.isNew && <span className="promo-badge pulse-badge">Baru</span>}
+                  <img src={promo.img} alt={promo.title} className="promo-image" />
+                </div>
 
-        {promos.map((promo, idx) => (
-  <Row
-    key={idx}
-    className="align-items-center text-center mb-5 p-4 rounded-2 shadow-sm"
-    style={{ borderRadius:'100px',backgroundColor: "#e6f2ff" }}
-    data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
-  >
-    <Col md={6} className={idx % 2 !== 0 ? "order-md-2" : ""}>
-      <img
-        src={promo.img}
-        alt={promo.title}
-        className="img-fluid rounded-4 shadow"
-        style={{
-          objectFit: "cover",
-          width: "100%",
-          height: "auto",
-          justifyContent:"center"
-        }}
-      />
-    </Col>
+                <div className="promo-content">
+                  <h3 className="fw-semibold">{promo.title}</h3>
+                  <p className="text-muted">{promo.desc}</p>
+                  <div className="promo-buttons mt-3 d-flex flex-wrap gap-2">
+                    <Button variant="primary" onClick={() => handleShare(promo.shareText)}>
+                      <FaShareAlt className="me-2" /> Bagikan Promo
+                    </Button>
+                    <Button variant="success" onClick={() => setShowModal(true)}>
+                      <FaWhatsapp className="me-2" /> WhatsApp
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </Col>
+          ))}
+        </Row>
+      </Container>
 
-    <Col md={6} className="mt-4 mt-md-0">
-      <h4 className="fw-bold text-dark mb-3">
-  {promo.title}
-  {promo.isNew && (
-    <span className="badge bg-danger text-white ms-3" style={{ fontSize: "0.75rem" }}>
-      NEW
-    </span>
-  )}
-</h4>
-      <p className="text-dark">{promo.desc}</p>
-
-      <div className="d-flex flex-wrap gap-2 justify-content-center ">
-        <Button
-          variant="dark"
-          className="rounded-pill"
-          onClick={() => handleShare(promo.shareText)}
-        >
-          <i className="bi bi-share-fill me-2"></i>Bagikan Promo
-        </Button>
-        <Button
-          variant="outline-success"
-          className="rounded-pill"
-          href="https://wa.me/6281234567890"
-          target="_blank"
-        >
-          <i className="bi bi-whatsapp me-2"></i>Klaim Sekarang
-        </Button>
-      </div>
-    </Col>
-  </Row>
-))}
-
-        </Container>
-      </div>
-    </>
+      {/* WhatsApp Modal */}
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Kontak WhatsApp Outlet</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <ul className="list-unstyled">
+            {outlets.map((outlet, index) => (
+              <li key={index} className="mb-3">
+                <a
+                  href={`https://wa.me/${outlet.phone}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-success w-100 d-flex justify-content-between align-items-center"
+                >
+                  <span>{outlet.name}</span>
+                  <FaWhatsapp />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Modal.Body>
+      </Modal>
+    </section>
   );
 };
 

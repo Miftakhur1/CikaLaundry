@@ -1,84 +1,119 @@
+/* ===================== Hero Banner ===================== */
 .contact-hero-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.482)), url("/public/ct.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.482)), url("/ct.png");
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
   height: 350px;
-  position: relative;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Typography inside hero (optional improvement) */
-.contact-hero-banner .elegant-title {
-  font-size: 3.5rem;
-  color: #f7f8f9;
+.contact-hero-banner h2 {
+  font-size: 3rem;
   font-weight: 700;
-  margin: 0;
 }
 
+.contact-hero-banner p {
+  font-size: 1rem;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===================== Section ===================== */
 .contact-section {
   background-color: #f9fbfc;
   padding: 60px 0;
 }
 
-.outlet-card-horizontal {
-  background-color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
+/* ===================== Map ===================== */
+.map-wrapper-small {
+  max-width: 900px;
 }
 
+/* ===================== Outlet Card ===================== */
 .outlet-img-wrapper {
-  width: 40%;
+  width: 100%;
+  height: 100%;
   max-height: 250px;
   overflow: hidden;
 }
 
 .outlet-img-wrapper img {
-  object-fit: cover;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.outlet-card-content {
-  width: 60%;
-  padding: 1.5rem;
+/* ===================== Buttons ===================== */
+.btnn {
+  border-width: 2px;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-/* Button */
-.btn {
-  color: rgb(228, 244, 5);
-  font-weight: 600;
+.btnn:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
 }
 
-/* ========== Responsive ========== */
+/* ===================== Social Icons ===================== */
+.footer-social-icons a {
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+  color: #007bff;
+}
+
+.instagram-icon {
+  color: #E1306C;
+}
+
+.tiktok-icon {
+  color: #000;
+}
+
+.google-icon {
+  color: #DB4437; /* Warna merah Google */
+  font-size: 20px;
+  margin-right: 6px;
+}
+
+.google-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ===================== Responsive ===================== */
 @media (max-width: 768px) {
   .contact-hero-banner {
     height: 240px;
     padding: 0 1rem;
   }
 
-  .contact-hero-banner .elegant-title {
+  .contact-hero-banner h2 {
     font-size: 2rem;
   }
 
-  .outlet-card-horizontal {
-    flex-direction: column;
+  .contact-hero-banner p {
+    font-size: 0.9rem;
   }
 
   .outlet-img-wrapper {
-    width: 100%;
     height: 200px;
   }
 
-  .outlet-card-content {
-    width: 100%;
-    padding: 1rem 1.25rem;
+  .footer-social-icons {
+    font-size: 1.5rem;
+    gap: 1.5rem;
   }
 }

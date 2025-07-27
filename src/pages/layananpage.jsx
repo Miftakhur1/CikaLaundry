@@ -5,31 +5,35 @@ import "../assets/css/layanan.css";
 import { FaStar } from "react-icons/fa";
 
 // Gambar
-import pfImage from "/public/ct.png"; // Ganti sesuai nama hero image
-import PaketRegulerImg from "../assets/img/paket-reguler.jpg";
+import pfImage from "/ct.png"; // Ganti sesuai nama hero image
+import PaketRegulerImg from "../assets/img/regu.png";
 import PaketExpress from "../assets/img/paket-express.jpg";
 import PaketDrylean from "../assets/img/paket-dryclean.jpg";
-import Karpet from "../assets/img/cuci-karpet.jpg";
+import dress from "../assets/img/dress.png";
+import Karpet from "../assets/img/kr.jpg";
 import helm from "../assets/img/helm.png";
 import bc from "../assets/img/bedcover.png";
 import tas from "../assets/img/tas.jpeg";
 import sepatu from "../assets/img/sepatu.jpg";
-
+import sofa from "../assets/img/sf.png";
+import jas from "../assets/img/jas.png";
+import spr from "../assets/img/spr.png";
+import str from "../assets/img/str.png";
 const layananList = [
+  { src: PaketRegulerImg, title: "Paket Premium", slug: "/premium", kategori: "Kiloan",bestSeller: true },
   { src: PaketRegulerImg, title: "Paket Reguler", slug: "/reguler", kategori: "Kiloan",bestSeller: true },
   { src: PaketExpress, title: "Paket Express", slug: "/express", kategori: "Kiloan",bestSeller: true },
   { src: PaketDrylean, title: "Cuci Kering", slug: "/cuker", kategori: "Kiloan",bestSeller: true },
-  { src: bc, title: "Setrika", slug: "/setrika", kategori: "Kiloan",bestSeller: true },
+  { src: str, title: "Setrika", slug: "/setrika", kategori: "Kiloan",bestSeller: true },
   { src: bc, title: "Bed Cover",slug: "/bc", kategori: "Satuan" ,bestSeller: true},
-  { src: PaketDrylean, title: "Jas", slug:'/jas', kategori: "Satuan" ,bestSeller: true},
+  { src: jas, title: "Jas", slug:'/jas', kategori: "Satuan" ,bestSeller: true},
   { src: sepatu, title: "Sepatu",slug: '/sepatu', kategori: "Satuan" ,bestSeller: true},
   { src: helm, title: "Helm",slug: '/helm', kategori: "Satuan" ,bestSeller: true},
   { src: tas, title: "Tas", slug: '/tas',kategori: "Satuan",bestSeller: true },
   { src: Karpet, title: "Cuci Karpet",slug: '/karpet', kategori: "Lainnya",bestSeller: true },
-  { src: PaketDrylean, title: "Cuci Sofa", kategori: "Lainnya" },
-  { src: PaketDrylean, title: "Springbed", kategori: "Lainnya" },
-  { src: PaketDrylean, title: "Dress",slug: '/dress', kategori: "Satuan",bestSeller: true },
-  { src: PaketDrylean, title: "Boneka",slug: '/boneka', kategori: "Satuan" },
+  { src: sofa, title: "Cuci Sofa", kategori: "Lainnya" },
+  { src: spr, title: "Springbed", kategori: "Lainnya" },
+  { src: dress, title: "Dress",slug: '/dress', kategori: "Satuan",bestSeller: true },
 ];
 
 const KategoriSection = ({ title, items }) => (

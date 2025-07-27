@@ -1,7 +1,7 @@
-import { useState ,useRef} from "react";
+import { useState, useRef } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import "../assets/css/contact.css";
-
+import { FcGoogle } from "react-icons/fc";
 const outlets = [
   {
     name: "Hasanudin",
@@ -47,79 +47,117 @@ const outlets = [
 
 const ContactPage = () => {
   const [activeMap, setActiveMap] = useState(outlets[0].mapsEmbed);
- const mapRef = useRef(null);
+  const mapRef = useRef(null);
+
   return (
     <section className="contact-section py-5">
+      {/* Banner */}
       <div className="contact-hero-banner d-flex align-items-center justify-content-center text-center text-white mb-5">
         <div className="overlay px-3 py-5">
-          <h2 className="fw-bold text-white mb-3">Hubungi Kami</h2>
-          <p className="text-light">
-            Pilih outlet terdekat dan nikmati layanan laundry kami.
-          </p>
+          <h1 className="fw-bold text-white mb-4 mt-5">Hubungi Kami</h1>
+          <p className="text-light">Pilih outlet terdekat dan nikmati layanan laundry kami.</p>
         </div>
       </div>
-        <Container>
 
-          <div ref={mapRef}
-          className="map-wrapper-small mb-5 mx-auto shadow rounded-4 overflow-hidden">
-            <iframe
-              title="Cika Laundry Map"
-              src={activeMap}
-              width="100%"
-              height="500"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+      <Container>
+        {/* Maps */}
+        <div
+          ref={mapRef}
+          className="map-wrapper-small mb-5 mx-auto shadow rounded-4 overflow-hidden"
+        >
+          <iframe
+            title="Cika Laundry Map"
+            src={activeMap}
+            width="100%"
+            height="500"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        {/* Outlet Cards */}
+        {outlets.map((outlet, i) => (
+          <Card key={i} className="mb-4 shadow-sm border-0 overflow-hidden rounded-4">
+            <Row className="g-0">
+              {/* Gambar */}
+              <Col md={4} xs={12}>
+                <div className="outlet-img-wrapper h-100">
+                  <Card.Img
+                    src={outlet.image}
+                    alt={`Outlet ${outlet.name}`}
+                    className="img-fluid h-100 w-100 object-fit-cover"
+                  />
+                </div>
+              </Col>
+
+              {/* Konten */}
+              <Col md={8} xs={12}>
+                <Card.Body className="h-100 d-flex flex-column justify-content-center text-center p-4">
+                  <h5 className="fw-bold mb-2">{outlet.name}</h5>
+                  <p className="text-muted small mb-3">{outlet.address}</p>
+                  <div className="d-flex justify-content-center flex-wrap gap-3">
+                    <Button
+                      variant="success"
+                      href={`https://wa.me/${outlet.whatsapp}`}
+                      target="_blank"
+                      className="rounded-pill px-4 py-2"
+                    >
+                      <i className="bi bi-whatsapp me-2"></i> WhatsApp
+                    </Button>
+                    <Button
+                      variant="outline-primary"
+                      className="btnn rounded-pill px-4 py-2"
+                      onClick={() => {
+                        setActiveMap(outlet.mapsEmbed);
+                        mapRef.current?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                    >
+                      <i className="bi bi-geo-alt me-2"></i> Lihat Maps
+                    </Button>
+                  </div>
+                </Card.Body>
+              </Col>
+            </Row>
+          </Card>
+        ))}
+
+        {/* Social Media */}
+        <div className="text-center mt-5">
+            <h4 className="fw-bold text-black">Hubungi Kami Kapan Saja</h4>
+            <p className="text-muted fs-6 mb-3">
+              Tim kami siap membantu Anda melalui berbagai saluran. Klik ikon di bawah untuk terhubung langsung.
+            </p>
+          <div className="d-flex justify-content-center gap-4 fs-3 footer-social-icons">
+             <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=cikalaudrysemarang@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="google-link"
+          >
+            <FcGoogle className="google-icon" size={30} />
+          </a>
+ <a
+              href="https://www.tiktok.com/@cikalaundryhq.official"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-tiktok tiktok-icon"></i>
+            </a>
+
+            <a
+              href="https://www.instagram.com/cikalaundryhq/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-instagram instagram-icon"></i>
+            </a>
+           
+           
           </div>
-
-          {outlets.map((outlet, i) => (
-    <Card key={i} className="mb-4 shadow-sm border-0 overflow-hidden rounded-4">
-      <Row className="g-0">
-        {/* Gambar Outlet Full 1 Kolom (kiri) */}
-        <Col md={4} xs={12}>
-          <div className="outlet-img-wrapper h-100">
-            <Card.Img
-              src={outlet.image}
-              alt={`Outlet ${outlet.name}`}
-              className="img-fluid h-100 w-100 object-fit-cover"
-            />
-          </div>
-        </Col>
-
-        {/* Konten (kanan) */}
-        <Col md={8} xs={12}>
-          <Card.Body className="h-100 d-flex flex-column justify-content-center text-center p-4">
-            <h5 className="fw-bold mb-2">{outlet.name}</h5>
-            <p className="text-muted small mb-3">{outlet.address}</p>
-            <div className="d-flex justify-content-center flex-wrap gap-3">
-              <Button
-                variant="success"
-                href={`https://wa.me/${outlet.whatsapp}`}
-                target="_blank"
-                className="rounded-pill px-4 py-2"
-              >
-                <i className="bi bi-whatsapp me-2"></i> WhatsApp
-              </Button>
-              <Button
-                variant="outline-primary"
-                className="btnn rounded-pill px-4 py-2"
-                onClick={() => {
-                  setActiveMap(outlet.mapsEmbed);
-                  mapRef.current?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                <i className="bi bi-geo-alt me-2"></i> Lihat Maps
-              </Button>
-            </div>
-          </Card.Body>
-        </Col>
-      </Row>
-    </Card>
-  ))}
-
-        </Container>
+        </div>
+      </Container>
     </section>
   );
 };

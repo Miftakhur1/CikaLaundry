@@ -215,39 +215,46 @@ html,body {
 
 
 /* ===================== PROFIL SECTION ===================== */
-body {
-  overflow-x: hidden;
-}
-
-.img-profil-wrapper {
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.img-profil-wrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .profil-section {
-  padding: 50px 1px;
+  padding: 40px 0; /* kurangi padding vertikal */
   background-color: #ffffff;
   overflow-x: hidden;
 }
 
-.profil-section img {
-  max-height: 420px;
-  min-width: 400px;
-  object-fit: cover;
+.img-profil-wrapper {
   width: 100%;
+  height: auto;
+  max-height: 480px;
+  overflow: hidden;
+  margin: 0; /* hilangkan margin */
+  padding: 0; /* hilangkan padding */
   border-radius: 5px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 3.0s ease;
 }
 
-.profil-section img:hover {
+.img-profil-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.img-profil-wrapper img:hover {
   transform: scale(1.02);
+}
+
+/* Pastikan col tidak terlalu padat */
+@media (min-width: 768px) {
+  .profil-section .row {
+    gap: 0; /* hilangkan celah antar kolom */
+    margin: 0 !important;
+  }
+
+  .profil-section .col-md-6 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .profil-section h3 {
@@ -377,7 +384,7 @@ body {
 .layanan-section::after {
   content: "";
   position: fixed;
-  width: 200px;
+  width: 300px;
   height: 200px;
   z-index: 0;
 }
@@ -403,7 +410,7 @@ body {
 
 /* === Judul Utama === */
 .layanan-section h2.elegant-title {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 0.5rem;
@@ -436,7 +443,7 @@ body {
 
 /* Slide Layout */
 .layanan-section .swiper-slide {
-  min-width: 240px;
+  min-width: 250px;
   max-width: 100%;
   flex-shrink: 0;
 }
@@ -449,7 +456,7 @@ body {
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease;
-  min-width: 230px;
+  min-width: 250px;
   max-width: 380px;
   margin-bottom: 10px;
 }
@@ -563,86 +570,69 @@ body {
 
 
         /* Section Promo Utama */
-/* ===================== PROMO CONTAINER ===================== */
-.promo-container-horizontal {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  padding: 1.5rem;
-  scroll-snap-type: x mandatory;
-  background: linear-gradient(to left, #d8ecff, #f1f9ff);
-  border-radius: 18px;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.05);
+.promo-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.9rem;
+  padding: 0 4.0rem;
 }
 
-/* ===================== KARTU PROMO ===================== */
-.promo-item-horizontal {
-  flex: 0 0 auto;
-  min-width: 340px;
-  max-width: 400px;
-  background: #ffffff;
-  border-radius: 20px;
+.promo-grid-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
   overflow: hidden;
-  scroll-snap-align: start;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: all 0.3s ease-in-out;
 }
 
-.promo-item-horizontal:hover {
-  transform: translateY(-5px) scale(0.98);
-  box-shadow: 0 12px 24px rgba(0, 123, 255, 0.15);
+.promo-grid-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0, 123, 255, 0.15);
 }
 
-/* ===================== GAMBAR ===================== */
-.promo-item-horizontal img {
+.promo-grid-card img {
   width: 100%;
-  height: 190px;
+  height: 180px;
   object-fit: cover;
 }
 
-/* ===================== KONTEN ===================== */
-.promo-content {
-  padding: 1.2rem;
-  text-align: center;
+.promo-grid-content {
+  padding: 1rem;
+  text-align: left;
 }
 
-.promo-content h5 {
-  font-size: 1.2rem;
+.promo-grid-content h5 {
+  font-size: 1.1rem;
   font-weight: 600;
   color: #012a4a;
+  margin-bottom: 0.4rem;
+}
+
+.promo-grid-content p {
+  font-size: 0.95rem;
+  color: #444;
   margin-bottom: 0.5rem;
 }
 
-.promo-content p {
-  font-size: 0.95rem;
-  color: #4d4d4d;
-  margin-bottom: 1rem;
-}
-
-/* ===================== TOMBOL ===================== */
-.promo-item-horizontal .btn {
+.btn-detail {
   background: linear-gradient(135deg, #0594ff, #00d9ff);
-  color: #fff;
+  color: white;
   border: none;
-  padding: 0.6rem 1.4rem;
   border-radius: 30px;
+  padding: 0.5rem 1.4rem;
   font-weight: 600;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 14px rgba(0, 123, 255, 0.3);
+}
+.btn-detail:hover {
+  background: linear-gradient(135deg, #007bff, #00b3ff);
+  color: #080808;
 }
 
-.promo-item-horizontal .btn:hover {
-  background: linear-gradient(135deg, #007bff, #00b3ff);
-  transform: scale(0.98);
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
-  color: #000;
-}
 
 /* ===================== CONTACT SECTION ===================== */
 .contact-section {
-  background: linear-gradient(to bottom, #ffffff, #e6f2ff);
+  background: linear-gradient(to bottom, #f7f5f5e6, #e6f2ff);
   padding: 70px 0;
   border-top: 1px solid #cce4f7;
 }
@@ -650,7 +640,7 @@ body {
 .contact-section h3 {
   font-size: 2rem;
   font-weight: 600;
-  color: #003366;
+  color: #090909;
   margin-bottom: 1rem;
 }
 
@@ -687,128 +677,6 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-/* ===================== FOOTER ===================== */
-footer {
-  background-color: #121212;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-  padding: 60px 0 20px;
-  z-index: 1;
-}
-
-/* Footer Inner Background (optional box) */
-footer .bg-dark {
-  background-color: #1e1e1e !important;
-}
-
-/* Footer Logo */
-footer img {
-  max-width: 180px;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-/* Judul Brand */
-footer h4 {
-  font-weight: 600;
-  font-size: 1.75rem;
-  color: #00d9ff;
-  margin-bottom: 1rem;
-}
-
-/* Footer Link */
-.footer-link {
-  color: #ccc;
-  font-size: 0.95rem;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  
-  margin: 0.4rem 0;
-}
-
-.footer-link:hover {
-  color: #00d9ff;
-}
-
-/* Social Icon */
-.social-icon {
-  color: #ccc;
-  font-size: 1.3rem;
-  margin-right: 10px;
-  transition: color 0.2s ease;
-  
-}
-
-.social-icon:hover {
-  color: #00d9ff;
-}
-
-footer svg {
-  vertical-align: middle;
-}
-
-/* Bubble Background Decorative */
-footer .bubble-decor {
-  position: absolute;
-  bottom: -40px;
-  left: -50px;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle at center, #00d9ff33, transparent 70%);
-  z-index: 0;
-}
-
-/* Footer Bottom Text */
-footer .text-muted {
-  font-size: 0.85rem;
-  color: #999 !important;
-  margin-top: 20px;
-}
-
-/* ===================== RESPONSIVE ===================== */
-@media (max-width: 992px) {
-  footer h4 {
-    font-size: 1.5rem;
-    
-  }
-
-  .footer-link {
-    font-size: 0.9rem;
-  }
-
-  .social-icon {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  footer .text-center {
-    text-align: center !important;
-  }
-
-  footer .d-flex {
-    flex-direction: column !important;
-    align-items: left !important;
-    gap: 1rem;
-  }
-
-  footer img {
-    max-width: 140px;
-  }
-
-  footer h4 {
-    font-size: 1.35rem;
-  }
-
-  .footer-link {
-    font-size: 0.85rem;
-  }
-
-  .social-icon {
-    font-size: 1.1rem;
-  }
-}
 
 /* ===================== FAQ SECTION ===================== */
 .faq-section {
@@ -857,39 +725,40 @@ footer .text-muted {
   padding:20px;
 }
 
-/* ===================== SOCIAL MEDIA ICONS ===================== */
 .footer-social-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 55px;
-  height: 45px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
+  display: inline-block;
+  margin: 0 6px;
   text-decoration: none;
-  background-color: #f1f1f1c8;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+  background: transparent;     /* hilangkan background */
+  box-shadow: none;    
+        /* hilangkan shadow */
+}
+
+.footer-social-icons a:hover {
+  transform: scale(1.15);
 }
 
 .footer-social-icons a i {
   font-size: 1.8rem;
 }
 
+/* Instagram */
 .instagram-icon {
   color: #e1306c;
 }
 .instagram-icon:hover {
-  background-color: #e1306c;
-  color: #fff;
+  color: #ff6f91;
 }
 
+/* TikTok */
 .tiktok-icon {
   color: #000;
 }
 .tiktok-icon:hover {
-  background-color: #000;
-  color: #fff;
+  color: #02375c;
 }
+
 
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {

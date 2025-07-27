@@ -1,21 +1,14 @@
-import { Navbar, Modal, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
+import { Navbar, Modal, Container, Nav,  Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 
 
 const NavbarComponent = () => {
-  const [setChangeColor] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   
-
-  useEffect(() => {
-    const changeBackgroundColor = () => setChangeColor(window.scrollY > 10);
-    window.addEventListener("scroll", changeBackgroundColor);
-    return () => window.removeEventListener("scroll", changeBackgroundColor);
-  }, []);
-
+  const [showModal, setShowModal] = useState(false);
+  // Daftar outlet dengan nomor WhatsApp
   const outlets = [
     { name: "Cika Laundry Hasanudin", phone: "628156505562" },
     { name: "Cika Laundry Puri Anjasmoro", phone: "628156505562" },

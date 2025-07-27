@@ -1,77 +1,155 @@
-.promo-detail-page {
-  background-color: #f8f9fa;
-  padding: 40px 0;
-  font-family: 'Poppins', sans-serif;
-}
 
-.promo-detail-page h2 {
-  font-weight: 700;
-  font-size: 2.2rem;
-  margin-bottom: 3rem;
-  color: #101010;
+
+.promo-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
-.promo-detail-page h4 {
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.promo-image {
+  flex: 1 1 300px;
+  max-width: 480px;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.promo-content {
+  flex: 1 1 400px;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  
+  
+}
+
+.promo-content h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #101010;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.promo-content p {
+  font-size: 16px;
+  color: #414040;
+  margin-bottom: 20px;
+  text-align: center;
+  
+} 
+
+.promo-badge {
+  background: linear-gradient(45deg, #ff6f61, #ff3e3e);
+  color: #fff;
+  padding: 0.25em 0.8em; /* padding mengikuti ukuran huruf */
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.promo-image-wrapper {
+  position: relative;
+  flex: 1 1 300px;
+  max-width: 380px;
+  overflow: hidden;
+}
+
+.promo-image-wrapper .promo-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+}
+
+
+
+.promo-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.promo-buttons .btn {
+  padding: 10px 20px;
   font-weight: 600;
-  font-size: 1.5rem;
-  color: #343a40;
-  margin-bottom: 1rem;
-}
-
-.promo-detail-page p {
-  font-size: 1rem;
-  color: #495057;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.promo-detail-page img {
-  max-height: 200px;
-  object-fit: cover ;
-  border-radius: 1rem;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-}
-
-.promo-detail-page .btn {
-  padding: 0.5rem 1.2rem;
-  font-weight: 500;
+  border-radius: 50px;
   font-size: 0.95rem;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
-.promo-detail-page .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.promo-buttons .btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.promo-buttons .btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.promo-buttons .btn:hover {
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
-  .promo-detail-page h2 {
-    font-size: 1.8rem;
+  .promo-card {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .promo-detail-page h4 {
-    font-size: 1.25rem;
+  .promo-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
   }
 
-  .promo-detail-page p {
-    font-size: 0.95rem;
+  .promo-content {
+    padding: 20px;
   }
 
-  .promo-detail-page img {
-    max-height: 100px;
+  .promo-buttons {
+    justify-content: center;
   }
 }
-.badge.bg-danger {
-  background-color: #dc3545 !important;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  animation: pulse 1.5s infinite;
-}
-
 @keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.8; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 62, 62, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 62, 62, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 62, 62, 0);
+  }
+}
+
+.promo-badge.pulse-badge {
+  animation: pulse 2s infinite;
 }
 

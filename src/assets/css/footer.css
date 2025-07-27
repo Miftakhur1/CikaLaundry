@@ -2,6 +2,10 @@ footer {
   background-color: #111;
   color: #eee;
   padding: 2.5rem 0;
+  padding: 60px 20px 40px;
+  z-index: 0;
+  overflow: hidden;
+   position: relative;
 }
 
 footer h5 {
@@ -11,7 +15,7 @@ footer h5 {
 }
 
 .footer-logo img {
-  width: 400px;
+  width: 300px;
   margin-bottom: 1rem;
 }
 
@@ -62,7 +66,7 @@ footer h5 {
   }
 
   .footer-logo img {
-    width: 500px;
+    width: 350px;
   }
 
   footer h5 {
@@ -72,9 +76,26 @@ footer h5 {
   footer p,
   footer li {
     font-size: 0.95rem;
+    
+    
   }
 
   .footer-bottom {
     font-size: 0.85rem;
+  }
+}
+.bubble-footer {
+  position: absolute;
+  bottom: -1500px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at center, #00d9ff33, transparent 70%);
+  z-index: 0;
+  pointer-events: none; /* supaya tidak mengganggu klik */
+}
+@media (max-width: 768px) {
+  .bubble-footer {
+    display: none;
   }
 }

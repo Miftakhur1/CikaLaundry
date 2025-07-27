@@ -1,23 +1,13 @@
 import { useEffect,useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col,  } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import '../assets/css/profil.css';
-import {
-  FaHandsWash,
-  FaTag,
-  FaInstagram,
-  FaTiktok,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaWhatsapp
-} from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+
 
 import Hero1 from "../assets/img/pf2.jpg";
 import Hero2 from "../assets/img/pf1.jpg";
-import LogoImage from "../assets/img/LOGO.png";
-import PaketRegulerImg from "../assets/img/paket-reguler.jpg";
+
 import PaketExpress from "../assets/img/paket-express.jpg";
 import PaketDrylean from "../assets/img/paket-dryclean.jpg";
 import Karpet from "../assets/img/cuci-karpet.jpg";
@@ -118,9 +108,10 @@ const pfImage = "/gh.jpg"; // gambar profil
     <Row className="gy-4 justify-content-center">
       {[
         {
-          title: "1. Garansi Uang Kembali",
-          desc: "Kami memberikan jaminan 100% uang kembali apabila terjadi kerusakan atau kehilangan barang.",
+          title: "1. Garansi & Jaminan",
+          desc: "Kami memberikan garansi dan jaminan sesuai kesepakatan apabila terjadi kerusakan, kehilangan, atau hal lain yang tidak diinginkan.",
         },
+
         {
           title: "2. Layanan Antar-Jemput Gratis",
           desc: "Kami menyediakan layanan antar-jemput tanpa biaya tambahan untuk area Semarang dan sekitarnya.",
@@ -135,7 +126,7 @@ const pfImage = "/gh.jpg"; // gambar profil
         },
         {
           title: "5. Peralatan Modern dan Higienis",
-          desc: "Mesin cuci modern & deterjen berkualitas tinggi menjaga kebersihan dan keamanan pakaian.",
+          desc: "Mesin cuci modern & chemical berkualitas tinggi menjaga kebersihan dan keamanan pakaian.",
         },
         {
           title: "6. Layanan Beragam",
@@ -154,9 +145,10 @@ const pfImage = "/gh.jpg"; // gambar profil
           desc: "Harga bersaing dengan sistem tarif jelas, tanpa biaya tersembunyi.",
         },
         {
-          title: "10. Komitmen terhadap Lingkungan",
-          desc: "Menggunakan produk eco-friendly dan meminimalkan limbah operasional.",
-        },
+        title: "10. Inovasi dalam Layanan",
+        desc: "Cika Laundry terus berinovasi dalam proses kerja agar pelayanan semakin cepat, bersih, dan efisien.",
+      }
+
       ].map((item, idx) => (
         <Col key={idx} xs={12} md={6} data-aos="fade-up">
           <div className="bg-white rounded-4 shadow-sm h-100 p-4">
@@ -204,7 +196,7 @@ const pfImage = "/gh.jpg"; // gambar profil
             className="form-select stylish-select shadow-sm rounded-3 px-3 py-2"
             required
           >
-            <option value="">🌐 -- Pilih Outlet --</option>
+            <option value=""> -- Pilih Outlet --</option>
             <option value="Cika Laundry Hasanudin">📍 Cika Laundry Hasanudin</option>
             <option value="Cika Laundry Puri Anjasmoro">📍 Cika Laundry Anjasmoro</option>
             <option value="Cika Laundry Arteri">📍 Cika Laundry Arteri</option>

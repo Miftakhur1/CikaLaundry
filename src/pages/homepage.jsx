@@ -5,15 +5,12 @@ import "aos/dist/aos.css";
 import {
   FaHandsWash,
   FaTag,
-  FaInstagram,
-  FaTiktok,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaWhatsapp
+
 } from "react-icons/fa";
-import { NavLink,useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -21,15 +18,23 @@ import 'swiper/css/navigation';
 // Images
 import Hero1 from "../assets/img/pf2.jpg";
 import Hero2 from "../assets/img/pf1.jpg";
+import Hero3 from "../assets/img/dress.png";
 import LogoImage from "../assets/img/LOGO.png";
-import PaketRegulerImg from "../assets/img/paket-reguler.jpg";
+import PaketRegulerImg from "../assets/img/regu.png";
 import PaketExpress from "../assets/img/paket-express.jpg";
 import PaketDrylean from "../assets/img/paket-dryclean.jpg";
-import Karpet from "../assets/img/cuci-karpet.jpg";
+import dress from "../assets/img/dress.png";
+import Karpet from "../assets/img/kr.jpg";
+import karpet from "../assets/img/cuci-karpet.jpg";
 import helm from "../assets/img/helm.png";
 import sepatu from "../assets/img/sepatu.jpg";
 import tas from "../assets/img/tas.jpeg";
 import bc from "../assets/img/bedcover.png";
+import sofa from "../assets/img/sf.png";
+import jas from "../assets/img/jas.png";
+import spr from "../assets/img/spr.png";
+import cu from "../assets/img/cu.png";
+import str from "../assets/img/str.png";
 
 const Homepage = () => {
   useEffect(() => {
@@ -50,7 +55,7 @@ const outlets = [
   { name: "Cika Laundry Graha wahid", link: "https://www.google.com/maps/place/Cika+Laundry+Graha+Wahid/@-7.0247046,110.4614354,17z/data=!4m8!3m7!1s0x2e708dfcd89e13b3:0x1f5d0d963ad082e7!8m2!3d-7.0247046!4d110.4614354!9m1!1b1!16s%2Fg%2F11kpj3clg0?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D" },
   { name: "Cika Laundry Ngaliyan", link: "https://www.google.com/maps/place/Cika+Laundry+%26+Drycleaning/@-6.9985577,110.3409471,17z/data=!4m8!3m7!1s0x2e708abd5249617d:0xef3c564fb14d6fc9!8m2!3d-6.998563!4d110.343522!9m1!1b1!16s%2Fg%2F1hm2032j0?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D" },
 ];
-  const pfImages = [Hero1, Hero2, Karpet, helm, PaketDrylean, PaketExpress];
+  const pfImages = [PaketRegulerImg, Hero2,Hero3, karpet, tas, PaketExpress];
   const [currentHero, setCurrentHero] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [activeMap, setActiveMap] = useState("");
@@ -70,7 +75,7 @@ const outlets = [
     date: "5 Mei 2025",
   },
   {
-    image: PaketDrylean,
+    image: dress,
     title: "Diskon 10% Cuci DryClean",
     description: " Punya jas, dress, atau gaun mahal? Saatnya dry clean dengan harga lebih hemat. Diskon hanya untuk pelanggan setia di bulan ini!",
     date: "10 Mei 2025",
@@ -130,7 +135,7 @@ const handleClose = () => setShowModal(false);
         data-aos-delay="400"
       >
         <a
-          href="#layanan"
+          href="/layanan"
           className="btn px-3 py-2 rounded-pill text-white d-flex justify-content-center align-items-center gap-2 text-center"
           style={{ backgroundColor: "#2196f3" }}
         >
@@ -171,17 +176,18 @@ const handleClose = () => setShowModal(false);
 </h2>
  
 
-<p className="mt-3 text-dark text-center fs-6">
-  Cika Laundry berkomitmen memberikan pelayanan terbaik bagi setiap pelanggan. Kami hadir dengan <span className="fw-bold text-primary">jaminan 100% uang kembali</span>.
+<p className="text-dark text-center fs-6 mt-3">
+  Cika Laundry selalu berusaha memberikan layanan terbaik bagi setiap pelanggan. Kami percaya, kepercayaan Anda adalah hal paling <br/>berharga, dan setiap pakaian yang Anda titipkan kami rawat dengan penuh tanggung jawab serta profesionalisme.
 </p>
 
 <p className="text-dark text-center fs-6">
-  Apabila terjadi kehilangan, kerusakan, atau keterlambatan dari estimasi layanan yang telah disepakati.
+  Untuk menjamin ketenangan Anda, kami memberikan <span className="fw-bold text-primary">jaminan dan garansi</span> sesuai kesepakatan <br /> apabila terjadi kehilangan, kerusakan, atau keterlambatan dari estimasi waktu layanan.
 </p>
 
 <p className="text-dark text-center fs-6">
-  Kepercayaan Anda adalah prioritas kami. Setiap pakaian yang Anda titipkan akan kami tangani secara profesional dan penuh tanggung jawab, <br></br>karena bagi kami, kepuasan pelanggan adalah bagian dari kualitas layanan.
+  Karena bagi kami, kepuasan pelanggan bukan sekadar tujuan, tapi bagian dari komitmen dalam menjaga <br />kualitas dan kepercayaan yang telah Anda berikan.
 </p>
+
 
 
 <section className="profil-section py-4 bg-white">
@@ -241,10 +247,11 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
       dengan proses pencucian yang higienis dan teliti agar tetap nyaman dipakai seharian.
     </p>
     <Swiper spaceBetween={15} slidesPerView={'auto'} grabCursor={true} freeMode={true}>
-      {[ { src: PaketRegulerImg, title: 'Paket Reguler', slug: '/reguler' },
+      {[ { src: PaketRegulerImg, title: 'Paket Premium', slug: '/premium' },
+       { src: PaketRegulerImg, title: 'Paket Reguler', slug: '/reguler' },
   { src: PaketExpress, title: 'Paket Express', slug: '/express' },
-  { src: PaketDrylean, title: 'Cuci Kering', slug: '/cuker' },
-  { src: bc, title: 'Setrika', slug: '/setrika' },
+  { src: cu, title: 'Cuci Kering', slug: '/cuker' },
+  { src: str, title: 'Setrika', slug: '/setrika' },
       ].map((item, idx) => (
         <SwiperSlide key={idx} style={{ display: 'flex', justifyContent: 'center', width: '230px' }}>
           <Card className="shadow-sm border-0 rounded-4 overflow-hidden text-center">
@@ -281,10 +288,10 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
       {[
         { src: bc, title: 'Cuci BedCover',slug: "/bc" },
         { src: sepatu, title: 'Cuci Sepatu',slug:"/sepatu" },
-        { src: PaketDrylean, title: 'Dress',slug:"/dress"},
+        { src: dress, title: 'Dress',slug:"/dress"},
         { src: tas, title: 'Cuci Tas',slug:"/tas" },
         
-        { src: PaketDrylean, title: 'Jas',slug:"/jas" },
+        { src: jas, title: 'Jas',slug:"/jas" },
         { src: helm, title: 'Cuci Helm',slug:"/helm" },
       ].map((item, idx) => (
         <SwiperSlide key={idx} style={{ display: 'flex', justifyContent: 'center', width: '230px' }}>
@@ -321,8 +328,8 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
     <Swiper spaceBetween={12} slidesPerView={'auto'} grabCursor={true} freeMode={true}>
       {[
         { src: Karpet, title: 'Cuci Karpet',slug: '/karpet' },
-        { src: PaketDrylean, title: 'Cuci Sofa' },
-        { src: PaketDrylean, title: 'Springbed' },
+        { src: sofa, title: 'Cuci Sofa' },
+        { src: spr, title: 'Springbed' },
       ].map((item, idx) => (
         <SwiperSlide key={idx} style={{ display: 'flex', justifyContent: 'center', width: '230px' }}>
           <Card className="layanan-card text-center">
@@ -357,7 +364,7 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
 <section className="outlet-testimonial py-5 bg-light" data-aos="fade-up">
       <Container>
         <div className="text-center mb-4">
-          <h3 className="fw-bold elegant-title">Testimoni</h3>
+          <h3 className="fw-bold" >Testimoni</h3>
           <p className="text-black">
             Yuk, simak pengalaman pelanggan yang puas dengan layanan Cika Laundry. Bukti nyata kualitas dan pelayanan terbaik kami!
           </p>
@@ -426,38 +433,41 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
       </Container>
     </section>
 
-{/* Promo */}
+{/* ------promo------ */}
 <section
-  className="promo-section py-4"
+  className="promo-section-grid py-5"
   style={{
-    background: "linear-gradient(135deg, #e3f2fd, #bbdefb)",
-    color: "#222",
+    background: "linear-gradient(135deg, #f0f9ff 0%, #d4e9ff 100%)",
+    color: "#222"
   }}
   data-aos="fade-up"
 >
-  <Container>
-    <div className="text-center mb-4">
-      <h3 className="fw-bold elegant-title text-center mb-3">Promo Spesial</h3>
-      <p className="text-black">
-        Nikmati promo hemat dari Cika Laundry – praktis, berkualitas, dan penuh keuntungan
-      </p>
-    </div>
+  <div className="text-center mb-4 px-3">
+    <h3 className="fw-bold elegant-title"> Promo Spesial Bulan Ini</h3>
+    <p className="text-secondary">
+      Temukan promo-promo menarik dari Cika Laundry untuk kebutuhan bersih Anda!
+    </p>
+  </div>
 
-    <div className="promo-container-horizontal">
-      {promoData.map((item, index) => (
-        <div key={index} className="promo-item-horizontal">
-          <img src={item.image} alt={item.title} />
-          <div className="promo-content">
-            <h5 className="fw-semibold">{item.title}</h5>
-            <p>{item.description}</p>
-            <small className="text-muted">Launching sejak: {item.date}</small>
-            <br />
-            <button className="btn btn-light mt-2">Lihat Detail</button>
-          </div>
+  <div className="promo-grid-wrapper">
+    {promoData.map((item, index) => (
+      <div className="promo-grid-card" key={index}>
+        <img src={item.image} alt={item.title} />
+        <div className="promo-grid-content">
+          <h5>{item.title}</h5>
+          <p>{item.description}</p>
+          <small className="text-muted">📅 {item.date}</small>
+          <br />
+         <button
+  className="btn-detail mt-3"
+  onClick={() => window.location.href = "/promo"}
+>
+  Lihat Detail
+</button>
         </div>
-      ))}
-    </div>
-  </Container>
+      </div>
+    ))}
+  </div>
 </section>
 
 
@@ -585,7 +595,7 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
 </section>
 
   <section className="faq-section px-3 px-md-5 py-5">
-  <h5 className="fw-bold mb-4 text-center">Pertanyaan yang Sering Diajukan (FAQ)</h5>
+  <h5 className="fw-bold mb-4 text-black text-center">Pertanyaan yang Sering Diajukan (FAQ)</h5>
   <Accordion defaultActiveKey="0" flush>
     <Accordion.Item eventKey="0">
       <Accordion.Header>
@@ -598,25 +608,40 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
       </Accordion.Body>
     </Accordion.Item>
 
-    <Accordion.Item eventKey="1">
+     <Accordion.Item eventKey="1">
+    <Accordion.Header>
+      Bagaimana cara memesan layanan di Cika Laundry?
+    </Accordion.Header>
+    <Accordion.Body>
+      Anda bisa memesan layanan Cika Laundry dengan beberapa cara mudah:
+      <ul className="mt-2 ps-3">
+        <li>Langsung datang ke outlet terdekat.</li>
+        <li>Hubungi admin via WhatsApp pada halaman <strong>Hubungi Kami</strong>.</li>
+        <li>Gunakan tombol WhatsApp di halaman beranda atau bagian kontak outlet.</li>
+      </ul>
+      Setelah pemesanan, kurir kami bisa menjemput dan mengantar cucian Anda sesuai kebutuhan.
+    </Accordion.Body>
+  </Accordion.Item>
+
+    <Accordion.Item eventKey="2">
       <Accordion.Header>
         Berapa estimasi waktu pengerjaan laundry?
       </Accordion.Header>
       <Accordion.Body>
         Estimasi waktu tergantung pada layanan yang dipilih. Untuk layanan reguler, estimasi
-        1–2 hari kerja. Untuk layanan express, selesai dalam waktu 6 jam.
-      </Accordion.Body>
-    </Accordion.Item>
-
-    <Accordion.Item eventKey="2">
-      <Accordion.Header>Apakah Cika Laundry memberikan garansi?</Accordion.Header>
-      <Accordion.Body>
-        Ya. Kami memberikan <strong>garansi 100% uang kembali</strong> jika terjadi
-        kehilangan, kerusakan, atau keterlambatan dari estimasi waktu yang dijanjikan.
+        1–2 hari kerja. Untuk layanan express, selesai dalam waktu minimal 2 jam 
       </Accordion.Body>
     </Accordion.Item>
 
     <Accordion.Item eventKey="3">
+      <Accordion.Header>Apakah Cika Laundry memberikan garansi?</Accordion.Header>
+      <Accordion.Body>
+        Ya. Kami memberikan <strong>garansi dan jaminan sesuai kesepakatan</strong> jika terjadi
+        kehilangan, kerusakan, atau keterlambatan dari estimasi waktu yang dijanjikan.
+      </Accordion.Body>
+    </Accordion.Item>
+
+    <Accordion.Item eventKey="4">
       <Accordion.Header>Apakah tersedia layanan antar jemput?</Accordion.Header>
       <Accordion.Body>
         Beberapa outlet Cika Laundry menyediakan layanan antar-jemput gratis di area tertentu.
@@ -624,7 +649,7 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
       </Accordion.Body>
     </Accordion.Item>
 
-    <Accordion.Item eventKey="4">
+    <Accordion.Item eventKey="5">
       <Accordion.Header>
         Bagaimana cara mengetahui lokasi outlet terdekat?
       </Accordion.Header>
@@ -638,15 +663,23 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
 </section>
 
     <div className="text-center icon ">
-  <h4 className="fw-bold mb-3 text-black">Ikuti Kami di Sosial Media</h4>
+      <h5 className="mb-3 fw-semibold">Temui Kami di Sosial Media</h5>
   <div className="d-flex justify-content-center gap-4 fs-3 footer-social-icons">
+     <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=cikalaudrysemarang@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="google-link"
+              >
+                <FcGoogle className="google-icon" size={30} />
+              </a>
     <a
       href="https://www.instagram.com/cikalaundryhq/"
       target="_blank"
       rel="noopener noreferrer"
       className="instagram-icon"
     >
-      <i className="bi bi-instagram"></i>
+      <i className="fab fa-instagram instagram-icon"></i>
     </a>
     <a
       href="https://www.tiktok.com/@cikalaundryhq.official"
@@ -654,7 +687,7 @@ Tak hanya itu, Cika Laundry juga menyediakan layanan Antar-Jemput Gratis untuk w
       rel="noopener noreferrer"
       className="tiktok-icon"
     >
-      <i className="bi bi-tiktok"></i>
+      <i className="fab fa-tiktok tiktok-icon"></i>
     </a>
   </div>
 </div>

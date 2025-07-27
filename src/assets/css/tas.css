@@ -12,7 +12,7 @@
 }
 
 .tas-page ul li::before {
-  content: "✔️";
+  
   margin-right: 0.5rem;
   color: green;
 }
